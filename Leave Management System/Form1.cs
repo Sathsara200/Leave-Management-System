@@ -28,6 +28,8 @@ namespace Leave_Management_System
 
         string connectionString = @"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
 
+        public Action<DataTable> DataLoaded { get; internal set; }
+
         private void pictureBox3_Click(object sender, EventArgs e)
         {
 

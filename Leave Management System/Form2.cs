@@ -8,15 +8,26 @@ namespace Leave_Management_System
     public partial class Form2 : Form
     {
         public static Form2 Instance;
-        
+        public static Form2 value { get; private set; }
+       
         public Form2()
         {
             InitializeComponent();
             Instance = this;
-           
+            value = this;
+            value =this;
+
         }
 
+        
+          
+
+            
+        
+
+
         string connectionString = @"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
+        internal Action<DataTable> DataLoaded;
 
         public void LoadData(string query)
         {
@@ -33,16 +44,18 @@ namespace Leave_Management_System
             }
 
         }
-        
-        private void Form1_Load(object sender, EventArgs e)
+
+       
+    private void Form1_Load(object sender, EventArgs e)
         {
             LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Select entire rows
-
+            
+        dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect; // Select entire rows
+            
             // Check if a valid cell (excluding header) is clicked
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
@@ -65,6 +78,8 @@ namespace Leave_Management_System
                             com.Parameters.AddWithValue("@id", id); // Use parameterized queries to prevent SQL injection
                             com.ExecuteNonQuery();
                             MessageBox.Show("Successfully canceled.");
+                            int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
+                            LoadData("select * from Emp_Leave where Employe_Id = '" + ip + "'");
                         }
                         catch (Exception ex)
                         {
