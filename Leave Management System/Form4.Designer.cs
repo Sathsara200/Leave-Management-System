@@ -87,6 +87,7 @@
             this.TxtExit.TabIndex = 10;
             this.TxtExit.Text = "Exit";
             this.TxtExit.UseVisualStyleBackColor = false;
+            this.TxtExit.Click += new System.EventHandler(this.TxtExit_Click);
             // 
             // btnLogin
             // 
@@ -100,6 +101,8 @@
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Enter);
             // 
             // txtUserName
             // 
@@ -110,7 +113,9 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(310, 24);
             this.txtUserName.TabIndex = 8;
-            this.txtUserName.Text = "User Id";
+            this.txtUserName.Text = "User name";
+            this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
+            this.txtUserName.Leave += new System.EventHandler(this.txtUserName_Leave);
             // 
             // txtAdminPassword
             // 
@@ -122,6 +127,8 @@
             this.txtAdminPassword.Size = new System.Drawing.Size(311, 24);
             this.txtAdminPassword.TabIndex = 9;
             this.txtAdminPassword.Text = "Password";
+            this.txtAdminPassword.Enter += new System.EventHandler(this.txtAdminPassword_Enter);
+            this.txtAdminPassword.Leave += new System.EventHandler(this.txtAdminPassword_Leave);
             // 
             // Form4
             // 
@@ -137,7 +144,6 @@
             this.Controls.Add(this.txtAdminPassword);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "Form4";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";

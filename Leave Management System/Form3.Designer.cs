@@ -38,10 +38,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnApply = new System.Windows.Forms.Button();
-            this.txtAR = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -138,21 +136,13 @@
             this.btnApply.BackColor = System.Drawing.Color.Green;
             this.btnApply.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApply.ForeColor = System.Drawing.Color.White;
-            this.btnApply.Location = new System.Drawing.Point(447, 413);
+            this.btnApply.Location = new System.Drawing.Point(447, 367);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(81, 41);
             this.btnApply.TabIndex = 2;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = false;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
-            // 
-            // txtAR
-            // 
-            this.txtAR.Location = new System.Drawing.Point(213, 341);
-            this.txtAR.Multiline = true;
-            this.txtAR.Name = "txtAR";
-            this.txtAR.Size = new System.Drawing.Size(315, 27);
-            this.txtAR.TabIndex = 0;
             // 
             // label7
             // 
@@ -171,16 +161,6 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(315, 27);
             this.txtDescription.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 348);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Admin Remark";
             // 
             // dateTimePicker1
             // 
@@ -216,12 +196,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 468);
+            this.ClientSize = new System.Drawing.Size(540, 425);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -230,7 +209,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.txtAR);
             this.Controls.Add(this.txtCountOfDate);
             this.Controls.Add(this.txtLeaveType);
             this.Controls.Add(this.txtEmployeId);
@@ -255,10 +233,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.TextBox txtAR;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;

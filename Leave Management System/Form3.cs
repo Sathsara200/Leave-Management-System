@@ -17,11 +17,11 @@ namespace Leave_Management_System
     public partial class Form3 : Form
     {
         public static Form3 value;
-        
+        public static Form3 Instance;
         public Form3()
         {
             InitializeComponent();
-           
+            Instance = this;
         }
 
         private void txtEmployeId_TextChanged(object sender, EventArgs e)
@@ -45,24 +45,26 @@ namespace Leave_Management_System
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
            
             SqlCommand cmd = new SqlCommand("insert into Emp_Leave values (@Employe_Id,@Leave_Type,@Applied_Date,@Count_Of_Days,@Date_Of_Commencing_Leave,@Date_Of_Recumming_Duties,@Description,@Admin_Remark)", con);
-                  
- 
+
+            cmd.Parameters.AddWithValue("@Admin_Remark", "Waiting for approvel");
+           
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@Employe_Id", txtEmployeId.Text);
+            //cmd.Parameters.AddWithValue("@Employe_Id", txtEmployeId.Text);
+            cmd.Parameters.AddWithValue("@Employe_Id", Form1.instance.tb1.Text);
             cmd.Parameters.AddWithValue("@Leave_Type", txtLeaveType.Text);
             cmd.Parameters.AddWithValue("@Applied_Date", this.dateTimePicker1.Text);
             cmd.Parameters.AddWithValue("@Count_Of_Days", txtCountOfDate.Text);
             cmd.Parameters.AddWithValue("@Date_Of_Commencing_Leave", this.dateTimePicker2.Text);
             cmd.Parameters.AddWithValue("@Date_Of_Recumming_Duties", this.dateTimePicker3.Text);
             cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
-            cmd.Parameters.AddWithValue("@Admin_Remark", txtAR.Text);
+           
 
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
            
             MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Form2.value.LoadData("select * from Emp_Leave where Employe_Id = '" + txtEmployeId.Text + "'");
+            Form2.value.LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
 
         }
 
