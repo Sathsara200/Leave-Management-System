@@ -123,5 +123,22 @@ namespace Leave_Management_System
                 }
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAreYouAdmin_Click(object sender, EventArgs e)
+        {
+            Form4 frm1 = new Form4();
+            frm1.Show();
+            this.Hide();
+        }
     }
 }

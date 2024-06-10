@@ -35,6 +35,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAreYouAdmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -47,7 +48,7 @@
             this.txtPassword.Location = new System.Drawing.Point(36, 325);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(310, 24);
+            this.txtPassword.Size = new System.Drawing.Size(311, 24);
             this.txtPassword.TabIndex = 0;
             this.txtPassword.Text = "Password";
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
@@ -74,7 +75,7 @@
             this.btnLogin.ForeColor = System.Drawing.Color.White;
             this.btnLogin.Location = new System.Drawing.Point(32, 465);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(310, 30);
+            this.btnLogin.Size = new System.Drawing.Size(315, 30);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -88,7 +89,7 @@
             this.TxtExit.ForeColor = System.Drawing.Color.Gray;
             this.TxtExit.Location = new System.Drawing.Point(32, 501);
             this.TxtExit.Name = "TxtExit";
-            this.TxtExit.Size = new System.Drawing.Size(310, 30);
+            this.TxtExit.Size = new System.Drawing.Size(315, 30);
             this.TxtExit.TabIndex = 5;
             this.TxtExit.Text = "Exit";
             this.TxtExit.UseVisualStyleBackColor = false;
@@ -127,6 +128,21 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnAreYouAdmin
+            // 
+            this.btnAreYouAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.btnAreYouAdmin.BackgroundImage = global::Leave_Management_System.Properties.Resources.pexels_codioful_7130495;
+            this.btnAreYouAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAreYouAdmin.ForeColor = System.Drawing.Color.Navy;
+            this.btnAreYouAdmin.Location = new System.Drawing.Point(213, 356);
+            this.btnAreYouAdmin.Name = "btnAreYouAdmin";
+            this.btnAreYouAdmin.Size = new System.Drawing.Size(134, 23);
+            this.btnAreYouAdmin.TabIndex = 7;
+            this.btnAreYouAdmin.Text = "Are you admin???";
+            this.btnAreYouAdmin.UseVisualStyleBackColor = false;
+            this.btnAreYouAdmin.Click += new System.EventHandler(this.btnAreYouAdmin_Click);
             // 
             // Form1
             // 
@@ -136,6 +152,7 @@
             this.BackgroundImage = global::Leave_Management_System.Properties.Resources.pexels_codioful_7130495;
             this.ClientSize = new System.Drawing.Size(365, 570);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAreYouAdmin);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.TxtExit);
@@ -165,5 +182,6 @@
         private System.Windows.Forms.Button TxtExit;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnAreYouAdmin;
     }
 }
