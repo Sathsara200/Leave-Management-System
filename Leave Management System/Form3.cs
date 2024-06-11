@@ -47,7 +47,7 @@ namespace Leave_Management_System
             SqlCommand cmd = new SqlCommand("insert into Emp_Leave values (@Employe_Id,@Leave_Type,@Applied_Date,@Count_Of_Days,@Date_Of_Commencing_Leave,@Date_Of_Recumming_Duties,@Description,@Admin_Remark)", con);
 
             cmd.Parameters.AddWithValue("@Admin_Remark", "Waiting for approvel");
-           
+            
             cmd.CommandType = CommandType.Text;
             //cmd.Parameters.AddWithValue("@Employe_Id", txtEmployeId.Text);
             cmd.Parameters.AddWithValue("@Employe_Id", Form1.instance.tb1.Text);

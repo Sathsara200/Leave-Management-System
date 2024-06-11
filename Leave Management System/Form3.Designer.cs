@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEmployeId = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtLeaveType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCountOfDate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,35 +40,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.txtLeaveType = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txtEmployeId
-            // 
-            this.txtEmployeId.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtEmployeId.Location = new System.Drawing.Point(213, 33);
-            this.txtEmployeId.Multiline = true;
-            this.txtEmployeId.Name = "txtEmployeId";
-            this.txtEmployeId.Size = new System.Drawing.Size(315, 27);
-            this.txtEmployeId.TabIndex = 0;
-            this.txtEmployeId.TextChanged += new System.EventHandler(this.txtEmployeId_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Employe ID";
-            // 
-            // txtLeaveType
-            // 
-            this.txtLeaveType.Location = new System.Drawing.Point(213, 77);
-            this.txtLeaveType.Multiline = true;
-            this.txtLeaveType.Name = "txtLeaveType";
-            this.txtLeaveType.Size = new System.Drawing.Size(315, 27);
-            this.txtLeaveType.TabIndex = 0;
             // 
             // label2
             // 
@@ -192,11 +162,20 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(315, 27);
             this.dateTimePicker3.TabIndex = 3;
             // 
+            // txtLeaveType
+            // 
+            this.txtLeaveType.Location = new System.Drawing.Point(213, 77);
+            this.txtLeaveType.Multiline = true;
+            this.txtLeaveType.Name = "txtLeaveType";
+            this.txtLeaveType.Size = new System.Drawing.Size(315, 27);
+            this.txtLeaveType.TabIndex = 4;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 425);
+            this.Controls.Add(this.txtLeaveType);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -207,11 +186,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtCountOfDate);
-            this.Controls.Add(this.txtLeaveType);
-            this.Controls.Add(this.txtEmployeId);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form3";
             this.Text = "Form3";
@@ -222,10 +198,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtEmployeId;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtLeaveType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCountOfDate;
         private System.Windows.Forms.Label label3;
@@ -238,5 +210,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.TextBox txtLeaveType;
     }
 }
