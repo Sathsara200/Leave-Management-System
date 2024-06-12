@@ -46,10 +46,6 @@ namespace Leave_Management_System
         }
 
        
-    private void Form1_Load(object sender, EventArgs e)
-        {
-            LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
-        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
