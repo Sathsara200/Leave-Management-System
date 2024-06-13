@@ -46,6 +46,10 @@ namespace Leave_Management_System
         }
 
        
+    private void Form1_Load(object sender, EventArgs e)
+        {
+            LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -84,8 +88,7 @@ namespace Leave_Management_System
                         finally
                         {
                             con.Close();
-                            // Optional: Reload data to reflect changes (consider performance impact)
-                            // LoadData("SELECT * FROM Emp_Leave");
+                            
                         }
                     }
                     else
@@ -110,6 +113,13 @@ namespace Leave_Management_System
         {
             Form3 frm1 = new Form3();
             frm1.Show();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form6 frm1 = new Form6();
+            frm1.Show();
+            this.Close();
         }
     }
 }

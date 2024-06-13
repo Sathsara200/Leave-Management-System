@@ -111,7 +111,7 @@ namespace Leave_Management_System
                    
                     // Login successful!
                     MessageBox.Show("Login successful!");
-                    Form2 frm1 = new Form2();
+                    Form6 frm1 = new Form6();
                     frm1.Show();
                     this.Hide();
 
@@ -135,6 +135,13 @@ namespace Leave_Management_System
         }
 
         private void btnAreYouAdmin_Click(object sender, EventArgs e)
+        {
+            Form4 frm1 = new Form4();
+            frm1.Show();
+            this.Hide();
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
             Form4 frm1 = new Form4();
             frm1.Show();

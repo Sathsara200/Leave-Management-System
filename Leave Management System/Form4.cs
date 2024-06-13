@@ -93,5 +93,12 @@ namespace Leave_Management_System
 
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            this.Close();
+        }
     }
 }
