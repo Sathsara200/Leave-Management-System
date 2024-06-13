@@ -77,7 +77,7 @@
             this.btnYourDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnYourDetails.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnYourDetails.ForeColor = System.Drawing.Color.White;
-            this.btnYourDetails.Location = new System.Drawing.Point(1, 94);
+            this.btnYourDetails.Location = new System.Drawing.Point(1, 95);
             this.btnYourDetails.Name = "btnYourDetails";
             this.btnYourDetails.Size = new System.Drawing.Size(257, 43);
             this.btnYourDetails.TabIndex = 0;
@@ -90,7 +90,7 @@
             this.btnLeaveDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLeaveDetails.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLeaveDetails.ForeColor = System.Drawing.Color.White;
-            this.btnLeaveDetails.Location = new System.Drawing.Point(1, 0);
+            this.btnLeaveDetails.Location = new System.Drawing.Point(1, 1);
             this.btnLeaveDetails.Name = "btnLeaveDetails";
             this.btnLeaveDetails.Size = new System.Drawing.Size(257, 43);
             this.btnLeaveDetails.TabIndex = 0;
@@ -103,7 +103,7 @@
             this.btnSalaryDetails.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalaryDetails.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalaryDetails.ForeColor = System.Drawing.Color.White;
-            this.btnSalaryDetails.Location = new System.Drawing.Point(1, 47);
+            this.btnSalaryDetails.Location = new System.Drawing.Point(1, 48);
             this.btnSalaryDetails.Name = "btnSalaryDetails";
             this.btnSalaryDetails.Size = new System.Drawing.Size(257, 43);
             this.btnSalaryDetails.TabIndex = 0;
@@ -115,19 +115,18 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(4, 1);
+            this.panel1.Location = new System.Drawing.Point(261, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1305, 134);
+            this.panel1.Size = new System.Drawing.Size(1048, 134);
             this.panel1.TabIndex = 3;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, -1);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(261, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -172,6 +171,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 651);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
