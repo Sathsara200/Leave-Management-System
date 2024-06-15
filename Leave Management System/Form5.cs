@@ -16,5 +16,19 @@ namespace Leave_Management_System
         {
             InitializeComponent();
         }
+
+        private void btnLeaveDetails_Click(object sender, EventArgs e)
+        {
+            Form9 frm1 = new Form9();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void btnPendingLeaves_Click(object sender, EventArgs e)
+        {
+            Form10 frm1 = new Form10();
+            frm1.Show();
+            this.Close();
+        }
     }
 }
