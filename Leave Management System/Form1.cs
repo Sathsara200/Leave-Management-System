@@ -86,42 +86,6 @@ namespace Leave_Management_System
             string userId = txtUserId.Text;
             string password = txtPassword.Text;
 
-            // Validate user input (optional, but recommended for user experience)
-            if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Please enter both User ID and Password.");
-                return;
-            }
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string sql = "SELECT COUNT(*) FROM User_Login WHERE Employe_Id = @Employe_Id AND Emp_Password = @Emp_password";
-                SqlCommand command = new SqlCommand(sql, connection);
-
-                command.Parameters.AddWithValue("@Employe_Id", userId);
-                command.Parameters.AddWithValue("@Emp_Password", password);
-
-                int count = (int)command.ExecuteScalar(); // Count matching credentials
-
-                if (count > 0)
-                {
-                    
-                   
-                    // Login successful!
-                    MessageBox.Show("Login successful!");
-                    Form6 frm1 = new Form6();
-                    frm1.Show();
-                    this.Hide();
-
-
-                }
-                else
-                {
-                    MessageBox.Show("Invalid User ID or Password.");
-                }
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)
