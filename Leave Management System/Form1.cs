@@ -83,8 +83,55 @@ namespace Leave_Management_System
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userId = txtUserId.Text;
+            string userId = txtUserId.Text; Console.ReadLine();
+            int number;
+
             string password = txtPassword.Text;
+            if (int.TryParse(userId, out number)) 
+            {
+                // Validate user input (optional, but recommended for user experience)
+                if (string.IsNullOrEmpty(userId) || string.IsNullOrEmpty(password))
+                {
+                    MessageBox.Show("Please enter both User ID and Password.");
+                    return;
+                }
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string sql = "SELECT COUNT(*) FROM Employe WHERE Employe_Id = @Employe_Id AND Password = @Password";
+                    SqlCommand command = new SqlCommand(sql, connection);
+
+                    command.Parameters.AddWithValue("@Employe_Id", userId);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    int count = (int)command.ExecuteScalar(); // Count matching credentials
+
+                    if (count > 0)
+                    {
+
+
+                        // Login successful!
+                        MessageBox.Show("Login successful!");
+                        Form6 frm1 = new Form6();
+                        frm1.Show();
+                        this.Hide();
+
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid User ID or Password.");
+                    }
+                }
+            }
+            else
+            {
+                // Conversion failed, userInput doesn't represent a valid integer
+                MessageBox.Show("Invalid User ID or Password.");
+            }
+
 
         }
 

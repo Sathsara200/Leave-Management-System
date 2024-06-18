@@ -30,5 +30,12 @@ namespace Leave_Management_System
             frm1.Show();
             this.Close();
         }
+
+        private void btnEmployeDetails_Click(object sender, EventArgs e)
+        {
+            Form11 frm1 = new Form11();
+            frm1.Show();
+            this.Close();
+        }
     }
 }

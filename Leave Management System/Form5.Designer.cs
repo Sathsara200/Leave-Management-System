@@ -84,6 +84,7 @@
             this.btnEmployeDetails.TabIndex = 0;
             this.btnEmployeDetails.Text = "Employe Deatails";
             this.btnEmployeDetails.UseVisualStyleBackColor = false;
+            this.btnEmployeDetails.Click += new System.EventHandler(this.btnEmployeDetails_Click);
             // 
             // btnLeaveDetails
             // 

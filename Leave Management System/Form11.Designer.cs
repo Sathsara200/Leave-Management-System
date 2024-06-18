@@ -35,9 +35,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtGender = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.txtDOB = new System.Windows.Forms.TextBox();
             this.lblDate_Of_Birth = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
@@ -45,28 +44,39 @@
             this.lblSalary = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 290);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1245, 412);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtEmployeId
             // 
-            this.txtEmployeId.Location = new System.Drawing.Point(114, 94);
+            this.txtEmployeId.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeId.Location = new System.Drawing.Point(121, 95);
             this.txtEmployeId.Multiline = true;
             this.txtEmployeId.Name = "txtEmployeId";
             this.txtEmployeId.Size = new System.Drawing.Size(481, 22);
@@ -84,7 +94,8 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(114, 134);
+            this.txtName.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(121, 134);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(481, 22);
@@ -102,7 +113,8 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(114, 174);
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Location = new System.Drawing.Point(121, 174);
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(481, 22);
@@ -112,19 +124,20 @@
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.Location = new System.Drawing.Point(9, 179);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(9, 180);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(101, 17);
             this.lblPhoneNumber.TabIndex = 2;
             this.lblPhoneNumber.Text = "Phone Number";
             // 
-            // txtAddress
+            // txtGender
             // 
-            this.txtAddress.Location = new System.Drawing.Point(114, 214);
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(481, 22);
-            this.txtAddress.TabIndex = 1;
+            this.txtGender.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGender.Location = new System.Drawing.Point(776, 94);
+            this.txtGender.Multiline = true;
+            this.txtGender.Name = "txtGender";
+            this.txtGender.Size = new System.Drawing.Size(481, 22);
+            this.txtGender.TabIndex = 1;
             // 
             // lblAddress
             // 
@@ -136,19 +149,11 @@
             this.lblAddress.TabIndex = 2;
             this.lblAddress.Text = "Address";
             // 
-            // txtDOB
-            // 
-            this.txtDOB.Location = new System.Drawing.Point(776, 94);
-            this.txtDOB.Multiline = true;
-            this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Size = new System.Drawing.Size(481, 22);
-            this.txtDOB.TabIndex = 1;
-            // 
             // lblDate_Of_Birth
             // 
             this.lblDate_Of_Birth.AutoSize = true;
             this.lblDate_Of_Birth.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate_Of_Birth.Location = new System.Drawing.Point(671, 100);
+            this.lblDate_Of_Birth.Location = new System.Drawing.Point(9, 264);
             this.lblDate_Of_Birth.Name = "lblDate_Of_Birth";
             this.lblDate_Of_Birth.Size = new System.Drawing.Size(90, 17);
             this.lblDate_Of_Birth.TabIndex = 2;
@@ -156,6 +161,7 @@
             // 
             // txtCity
             // 
+            this.txtCity.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCity.Location = new System.Drawing.Point(776, 134);
             this.txtCity.Multiline = true;
             this.txtCity.Name = "txtCity";
@@ -174,6 +180,7 @@
             // 
             // txtSalary
             // 
+            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSalary.Location = new System.Drawing.Point(776, 174);
             this.txtSalary.Multiline = true;
             this.txtSalary.Name = "txtSalary";
@@ -192,6 +199,7 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(776, 214);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
@@ -208,31 +216,19 @@
             this.lblPassword.TabIndex = 2;
             this.lblPassword.Text = "Password";
             // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.Blue;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(969, 250);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(86, 25);
-            this.btnRegister.TabIndex = 3;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            // 
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Blue;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(1070, 250);
+            this.btnUpdate.Location = new System.Drawing.Point(1069, 250);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(86, 25);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -246,14 +242,16 @@
             this.btnDelete.TabIndex = 3;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(12, 27);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1144, 25);
+            this.txtSearch.Size = new System.Drawing.Size(1143, 25);
             this.txtSearch.TabIndex = 4;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnSearch
             // 
@@ -268,21 +266,81 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(121, 256);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(481, 25);
+            this.dateTimePicker1.TabIndex = 5;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.Blue;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.White;
+            this.btnReset.Location = new System.Drawing.Point(966, 250);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(86, 25);
+            this.btnReset.TabIndex = 3;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(863, 250);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 25);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGender.Location = new System.Drawing.Point(671, 100);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(52, 17);
+            this.lblGender.TabIndex = 2;
+            this.lblGender.Text = "Gender";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(121, 215);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(481, 22);
+            this.txtAddress.TabIndex = 1;
+            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1269, 714);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblSalary);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.lblDate_Of_Birth);
+            this.Controls.Add(this.lblGender);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblPhoneNumber);
             this.Controls.Add(this.lblName);
@@ -290,14 +348,15 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtCity);
-            this.Controls.Add(this.txtDOB);
             this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtPhoneNumber);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtEmployeId);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form11";
             this.Text = "Form11";
+            this.Load += new System.EventHandler(this.Form11_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -313,9 +372,8 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtPhoneNumber;
         private System.Windows.Forms.Label lblPhoneNumber;
-        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox txtDOB;
         private System.Windows.Forms.Label lblDate_Of_Birth;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label lblCity;
@@ -323,10 +381,14 @@
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.TextBox txtAddress;
     }
 }

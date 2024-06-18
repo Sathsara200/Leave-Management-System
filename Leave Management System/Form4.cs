@@ -100,5 +100,10 @@ namespace Leave_Management_System
             frm1.Show();
             this.Close();
         }
+
+        private void Form4_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

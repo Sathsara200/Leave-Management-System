@@ -56,7 +56,7 @@ namespace Leave_Management_System
 
         private void Form8_Load(object sender, EventArgs e)
         {
-            LoadData("select Employe_Id,Name,Phone_Number,Address,Date_Of_Birth,City from Employe where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+            LoadData("select Employe_Id,Name,Phone_Number,Address,Date_Of_Birth,Gender,City from Employe where Employe_Id = '" + Form1.instance.tb1.Text + "'");
         }
     }
 }
