@@ -28,7 +28,6 @@ namespace Leave_Management_System
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string sql = "SELECT * FROM Employe"; // Replace "YourTable" with your actual table name
                 connection.Open();
                 SqlCommand command = new SqlCommand(sql, connection);
                 dataTable.Load(command.ExecuteReader());
@@ -37,19 +36,6 @@ namespace Leave_Management_System
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            LoadData();
-            string searchText = txtSearch.Text.ToLower();
-            if (searchText != "")
-            {
-                DataView dataView = new DataView(dataTable);
-                string filter = "([Name] LIKE '%" + searchText + "%') "; // Add more columns for filtering
-                dataView.RowFilter = filter;
-                dataGridView1.DataSource = dataView;
-            }
-            else
-            {
-                dataGridView1.DataSource = dataTable; // Reset to full data if search text is empty
-            }
            
         }
 
