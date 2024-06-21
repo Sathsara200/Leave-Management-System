@@ -76,11 +76,12 @@ namespace Leave_Management_System
                             com.ExecuteNonQuery();
                             MessageBox.Show("Successfully Approved.");
                             int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
-                           
+                            LoadData("select * from Emp_Leave where Admin_Remark = 'Waiting for approval'");
                         }
                         catch (Exception ex)
                         {
                             MessageBox.Show("Error Approval leave: " + ex.Message);
+                          
                         }
                         finally
                         {
@@ -100,7 +101,7 @@ namespace Leave_Management_System
                             com.ExecuteNonQuery();
                             MessageBox.Show("Successfully Approval canceled.");
                             int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
-                           
+                            LoadData("select * from Emp_Leave where Admin_Remark = 'Waiting for approval'");
                         }
                         catch (Exception ex)
                         {

@@ -15,7 +15,7 @@ namespace Leave_Management_System
             InitializeComponent();
             Instance = this;
             value = this;
-            value =this;
+          
 
         }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -44,10 +45,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::Leave_Management_System.Properties.Resources.user__1_;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(138, 54);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(129, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(145, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -82,9 +83,9 @@
             this.TxtExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.TxtExit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtExit.ForeColor = System.Drawing.Color.Gray;
-            this.TxtExit.Location = new System.Drawing.Point(32, 501);
+            this.TxtExit.Location = new System.Drawing.Point(42, 501);
             this.TxtExit.Name = "TxtExit";
-            this.TxtExit.Size = new System.Drawing.Size(349, 30);
+            this.TxtExit.Size = new System.Drawing.Size(350, 30);
             this.TxtExit.TabIndex = 10;
             this.TxtExit.Text = "Exit";
             this.TxtExit.UseVisualStyleBackColor = false;
@@ -92,13 +93,13 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnLogin.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(32, 465);
+            this.btnLogin.Location = new System.Drawing.Point(42, 465);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(349, 30);
+            this.btnLogin.Size = new System.Drawing.Size(350, 30);
             this.btnLogin.TabIndex = 11;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -109,10 +110,10 @@
             // 
             this.txtUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUserName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(37, 286);
+            this.txtUserName.Location = new System.Drawing.Point(42, 286);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(349, 24);
+            this.txtUserName.Size = new System.Drawing.Size(350, 24);
             this.txtUserName.TabIndex = 8;
             this.txtUserName.Text = "User name";
             this.txtUserName.Enter += new System.EventHandler(this.txtUserName_Enter);
@@ -122,10 +123,10 @@
             // 
             this.txtAdminPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAdminPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdminPassword.Location = new System.Drawing.Point(36, 325);
+            this.txtAdminPassword.Location = new System.Drawing.Point(42, 325);
             this.txtAdminPassword.Multiline = true;
             this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(349, 24);
+            this.txtAdminPassword.Size = new System.Drawing.Size(350, 24);
             this.txtAdminPassword.TabIndex = 9;
             this.txtAdminPassword.Text = "Password";
             this.txtAdminPassword.Enter += new System.EventHandler(this.txtAdminPassword_Enter);
@@ -135,8 +136,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(253, 354);
+            this.label1.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.label1.Location = new System.Drawing.Point(257, 354);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 16);
             this.label1.TabIndex = 14;
@@ -147,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Leave_Management_System.Properties.Resources.pexels_codioful_7130495;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(411, 570);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);

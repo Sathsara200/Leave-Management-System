@@ -13,7 +13,7 @@ namespace Leave_Management_System
 {
     public partial class Form12 : Form
     {
-
+        public static Form12 Lvalue;
         public Form12()
         {
             InitializeComponent();
@@ -45,8 +45,8 @@ namespace Leave_Management_System
             
 
             MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
-           
 
+            Form11.Lvalue.LData("select * from Employe");
         }
 
 

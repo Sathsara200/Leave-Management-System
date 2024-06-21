@@ -51,7 +51,7 @@ namespace Leave_Management_System
             cmd.CommandType = CommandType.Text;
             //cmd.Parameters.AddWithValue("@Employe_Id", txtEmployeId.Text);
             cmd.Parameters.AddWithValue("@Employe_Id", Form1.instance.tb1.Text);
-            cmd.Parameters.AddWithValue("@Leave_Type", txtLeaveType.Text);
+            cmd.Parameters.AddWithValue("@Leave_Type", comboBox1.Text);
             cmd.Parameters.AddWithValue("@Applied_Date", this.dateTimePicker1.Text);
             cmd.Parameters.AddWithValue("@Count_Of_Days", txtCountOfDate.Text);
             cmd.Parameters.AddWithValue("@Date_Of_Commencing_Leave", this.dateTimePicker2.Text);

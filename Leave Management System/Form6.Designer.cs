@@ -57,6 +57,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1343, 158);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -78,6 +79,7 @@
             this.label3.Size = new System.Drawing.Size(48, 45);
             this.label3.TabIndex = 0;
             this.label3.Text = "??";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -169,6 +171,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1046, 627);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // Form6
             // 

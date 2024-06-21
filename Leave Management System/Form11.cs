@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,23 +16,33 @@ namespace Leave_Management_System
 {
     public partial class Form11 : Form
     {
+        public static Form11 Lvalue { get; private set; }
+
+      
+
         public Form11()
         {
             InitializeComponent();
             dataTable = new DataTable();
-            LoadData();
+            Lvalue = this;
+          
+
         }
        
         string connectionString = @"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
         private DataTable dataTable;
-        private void LoadData()
+        public void LData(string query)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(sql, connection);
-                dataTable.Load(command.ExecuteReader());
-                dataGridView1.DataSource = dataTable;
+                using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    dataGridView1.AutoGenerateColumns = false;
+                }
             }
         }
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -48,7 +59,7 @@ namespace Leave_Management_System
 
         private void Form11_Load(object sender, EventArgs e)
         {
-           
+            LData("select * from Employe"); // Assuming LData() refreshes form data
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -84,7 +95,7 @@ namespace Leave_Management_System
                     }
 
                     MessageBox.Show("Deletion successful!");
-                    LoadData();
+                    LData("select * from Employe");
                 }
                 catch (SqlException ex)
                 {
@@ -168,7 +179,7 @@ namespace Leave_Management_System
                     {
                         MessageBox.Show("Record successfully updated!", "Update",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadData(); // Assuming LoadData() refreshes form data
+                        LData("select * from Employe"); // Assuming LoadData() refreshes form data
                     }
                     else
                     {
@@ -198,6 +209,29 @@ namespace Leave_Management_System
             txtCity.Text = "";
             txtSalary.Text = "";
             txtPassword.Text = "";
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string Search = txtSearch.Text; Console.ReadLine();
+            int number;
+            if (int.TryParse(Search, out number))
+                if (txtSearch.Text != "")
+                {
+
+                    LData("select * from Employe where Employe_Id = '" + txtSearch.Text + "'");
+
+                }
+                else
+                {
+                    MessageBox.Show(" Something went wrong ", "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            else
+            {
+                MessageBox.Show(" Something went wrong ", "Error",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
