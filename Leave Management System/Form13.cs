@@ -15,7 +15,6 @@ namespace Leave_Management_System
   
     public partial class Form13 : Form
     {
-        private object identityValue;
 
         public Form13(int identityValue)
         {
@@ -23,19 +22,13 @@ namespace Leave_Management_System
             int identityValue1 = identityValue;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
 
-            string sql = "INSERT INTO Employe (Employe_Id,Emp_Password) VALUES (@Employe_Id, @Emp_Password);";
-            SqlCommand cmd = new SqlCommand(sql, con);
 
 
             cmd.Parameters.AddWithValue("@Employe_Id",  identityValue);
             cmd.CommandType = CommandType.Text;
             
 
-            cmd.Parameters.AddWithValue("@Name", txtPassword.Text);
            
 
             con.Open();

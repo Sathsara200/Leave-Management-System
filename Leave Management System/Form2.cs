@@ -119,7 +119,6 @@ namespace Leave_Management_System
         {
             Form6 frm1 = new Form6();
             frm1.Show();
-            this.Close();
         }
     }
 }

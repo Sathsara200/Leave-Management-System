@@ -81,9 +81,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button button1;
     }
 }

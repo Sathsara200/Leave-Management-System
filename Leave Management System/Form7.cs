@@ -53,7 +53,7 @@ namespace Leave_Management_System
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            LoadData("select Employe_Id,Salary from Employe where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+            LoadData("select * from Emp_Salary where Employe_Id = '" + Form1.instance.tb1.Text + "'");
         }
     }
 }

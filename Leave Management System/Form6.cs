@@ -57,9 +57,6 @@ namespace Leave_Management_System
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
                
                 string sql = "SELECT Name FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
                 SqlCommand cmd = new SqlCommand(sql, connection);
@@ -69,8 +66,6 @@ namespace Leave_Management_System
                 reader.Close();
 
             }
-
-
         }
     }
 }
