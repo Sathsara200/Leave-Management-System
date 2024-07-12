@@ -116,7 +116,7 @@ namespace Leave_Management_System
                 dateTimePicker1.Text = dataGridView1.Rows[e.RowIndex].Cells["Date_Of_Birth"].FormattedValue.ToString();
                 txtGender.Text = dataGridView1.Rows[e.RowIndex].Cells["Gender"].FormattedValue.ToString();
                 txtCity.Text = dataGridView1.Rows[e.RowIndex].Cells["City"].FormattedValue.ToString();
-                txtSalary.Text = dataGridView1.Rows[e.RowIndex].Cells["Salary"].FormattedValue.ToString();
+               
                 txtPassword.Text = dataGridView1.Rows[e.RowIndex].Cells["Password"].FormattedValue.ToString();
             }
         }
@@ -158,7 +158,7 @@ namespace Leave_Management_System
                     SqlCommand cmd = new SqlCommand(
                         "UPDATE Employe SET Name = @Name, Phone_Number = @Phone_Number, " +
                         "Address = @Address, Date_Of_Birth = @Date_Of_Birth, Gender = @Gender, " +
-                        "City = @City, Salary = @Salary, Password = @Password " +
+                        "City = @City, Password = @Password " +
                         "WHERE Employe_Id = @EmployeId", con);
 
                     // Add parameters with appropriate data types (consider using SqlParameter for more control)
@@ -170,7 +170,7 @@ namespace Leave_Management_System
                     cmd.Parameters.AddWithValue("@Gender", txtGender.Text);
                     cmd.Parameters.AddWithValue("@City", txtCity.Text);
                     // Convert salary to appropriate numeric type (e.g., decimal, double) if needed
-                    cmd.Parameters.AddWithValue("@Salary", txtSalary.Text);
+                  
                     cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
@@ -207,7 +207,7 @@ namespace Leave_Management_System
             txtAddress.Text = "";
             txtGender.Text = "";
             txtCity.Text = "";
-            txtSalary.Text = "";
+            
             txtPassword.Text = "";
         }
 
@@ -232,6 +232,13 @@ namespace Leave_Management_System
                 MessageBox.Show(" Something went wrong ", "Error",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form13 frm1 = new Form13();
+            frm1.Show();
+            this.Close();
         }
     }
 }

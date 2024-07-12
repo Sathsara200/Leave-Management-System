@@ -1,6 +1,6 @@
 ﻿namespace Leave_Management_System
 {
-    partial class Form3
+    partial class Apply
     {
         /// <summary>
         /// Required designer variable.
@@ -174,7 +174,7 @@
             this.comboBox1.Size = new System.Drawing.Size(315, 24);
             this.comboBox1.TabIndex = 4;
             // 
-            // Form3
+            // Apply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,8 +193,8 @@
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.txtCountOfDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form3";
-            this.Text = "Form3";
+            this.Name = "Apply";
+            this.Text = "Apply";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

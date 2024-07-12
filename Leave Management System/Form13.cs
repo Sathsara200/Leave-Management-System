@@ -15,27 +15,54 @@ namespace Leave_Management_System
   
     public partial class Form13 : Form
     {
+       
 
-        public Form13(int identityValue)
+        public Form13()
         {
             InitializeComponent();
-            int identityValue1 = identityValue;
+            
         }
 
+       
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form11 frm1 = new Form11();
+            frm1.Show();
+            this.Close();
+        }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Form9 frm1 = new Form9();
+            frm1.Show();
+            this.Close();
+        }
 
-            cmd.Parameters.AddWithValue("@Employe_Id",  identityValue);
-            cmd.CommandType = CommandType.Text;
-            
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-           
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Form5 frm1 = new Form5();
+            frm1.Show();
+            this.Close();
+        }
 
-            MessageBox.Show("Successfully added password", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
 
         }
     }

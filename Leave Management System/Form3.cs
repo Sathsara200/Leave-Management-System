@@ -14,11 +14,11 @@ using System.Xml.Linq;
 
 namespace Leave_Management_System
 {
-    public partial class Form3 : Form
+    public partial class Apply : Form
     {
-        public static Form3 value;
-        public static Form3 Instance;
-        public Form3()
+        public static Apply value;
+        public static Apply Instance;
+        public Apply()
         {
             InitializeComponent();
             Instance = this;

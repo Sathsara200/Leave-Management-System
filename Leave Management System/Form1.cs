@@ -42,7 +42,7 @@ namespace Leave_Management_System
 
         private void txtUserId_Enter(object sender, EventArgs e)
         {
-            if (txtUserId.Text == "User Id")
+            if (txtUserId.Text == "Enter user id or user name")
             {
                 txtUserId.Text = "";
                 txtUserId.ForeColor = Color.Black;
@@ -54,14 +54,14 @@ namespace Leave_Management_System
         {
             if (txtUserId.Text == "")
             {
-                txtUserId.Text = "User Id";
+                txtUserId.Text = "Enter user id or user name";
                 txtUserId.ForeColor = Color.Silver;
             }
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
-            if (txtPassword.Text == "Password")
+            if (txtPassword.Text == "Enter password")
             {
                 txtPassword.Text = "";
                 txtPassword.ForeColor = Color.Black;
@@ -73,7 +73,7 @@ namespace Leave_Management_System
         {
             if (txtPassword.Text == "")
             {
-                txtPassword.Text = "Password";
+                txtPassword.Text = "Enter password";
                 txtPassword.ForeColor = Color.Silver;
                 txtPassword.PasswordChar = '\0';
             }
@@ -128,8 +128,21 @@ namespace Leave_Management_System
             }
             else
             {
-                // Conversion failed, userInput doesn't represent a valid integer
-                MessageBox.Show("Invalid User ID or Password.");
+                if (txtUserId.Text == "Admin" && txtPassword.Text == "Admin123")
+                {
+                    MessageBox.Show("Welcome Admin", "Welcome", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form13 frm1 = new Form13();
+                    frm1.Show();
+                    this.Hide();
+                }
+
+                else
+                {
+                    MessageBox.Show("Login Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserId.Text = "";
+                    txtPassword.Clear();
+                    txtUserId.Focus();
+                }
             }
 
 
@@ -147,16 +160,12 @@ namespace Leave_Management_System
 
         private void btnAreYouAdmin_Click(object sender, EventArgs e)
         {
-            Form4 frm1 = new Form4();
-            frm1.Show();
-            this.Hide();
+          
         }
 
         private void label1_Click_1(object sender, EventArgs e)
         {
-            Form4 frm1 = new Form4();
-            frm1.Show();
-            this.Hide();
+           
         }
     }
 }

@@ -45,8 +45,8 @@ namespace Leave_Management_System
 
         private void label3_Click(object sender, EventArgs e)
         {
-            
-            
+
+          
 
         }
 
@@ -57,7 +57,38 @@ namespace Leave_Management_System
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-               
+            
+
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Form2 frm1 = new Form2();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form8 frm1 = new Form8();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Form7 frm1 = new Form7();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void Form6_Load(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
                 string sql = "SELECT Name FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
                 SqlCommand cmd = new SqlCommand(sql, connection);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -66,6 +97,16 @@ namespace Leave_Management_System
                 reader.Close();
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

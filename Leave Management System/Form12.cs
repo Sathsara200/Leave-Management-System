@@ -24,7 +24,7 @@ namespace Leave_Management_System
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
 
-            SqlCommand cmd = new SqlCommand("insert into Employe values (@Name,@Phone_Number,@Address,@Date_Of_Birth,@Gender,@City,@Salary,@Password)", con);
+            SqlCommand cmd = new SqlCommand("insert into Employe values (@Name,@Phone_Number,@Address,@Date_Of_Birth,@Gender,@City,@Password)", con);
 
             
 
@@ -36,7 +36,7 @@ namespace Leave_Management_System
             cmd.Parameters.AddWithValue("@Date_Of_Birth", this.dateTimePicker1.Text);
             cmd.Parameters.AddWithValue("@Gender",txtGender.Text);
             cmd.Parameters.AddWithValue("@City", txtCity.Text);
-            cmd.Parameters.AddWithValue("@Salary", txtSalary.Text);
+            
             cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
 

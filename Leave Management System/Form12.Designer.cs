@@ -37,8 +37,6 @@
             this.lblDOB = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
-            this.lblSalary = new System.Windows.Forms.Label();
-            this.txtSalary = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblGender = new System.Windows.Forms.Label();
@@ -124,30 +122,13 @@
             this.txtCity.Size = new System.Drawing.Size(402, 22);
             this.txtCity.TabIndex = 1;
             // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Location = new System.Drawing.Point(12, 300);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(46, 16);
-            this.lblSalary.TabIndex = 0;
-            this.lblSalary.Text = "Salary";
-            // 
-            // txtSalary
-            // 
-            this.txtSalary.Location = new System.Drawing.Point(121, 294);
-            this.txtSalary.Multiline = true;
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(402, 22);
-            this.txtSalary.TabIndex = 1;
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(439, 415);
+            this.button1.Location = new System.Drawing.Point(439, 364);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 32);
             this.button1.TabIndex = 2;
@@ -184,7 +165,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(12, 342);
+            this.lblPassword.Location = new System.Drawing.Point(12, 300);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(67, 16);
             this.lblPassword.TabIndex = 0;
@@ -192,7 +173,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(124, 336);
+            this.txtPassword.Location = new System.Drawing.Point(121, 294);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(402, 22);
@@ -202,13 +183,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 459);
+            this.ClientSize = new System.Drawing.Size(538, 418);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblSalary);
             this.Controls.Add(this.txtGender);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.lblGender);
@@ -239,8 +218,6 @@
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.TextBox txtCity;
-        private System.Windows.Forms.Label lblSalary;
-        private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblGender;

@@ -111,7 +111,7 @@ namespace Leave_Management_System
 
         private void btnLeave_Click(object sender, EventArgs e)
         {
-            Form3 frm1 = new Form3();
+            Apply frm1 = new Apply();
             frm1.Show();
         }
 
@@ -119,6 +119,7 @@ namespace Leave_Management_System
         {
             Form6 frm1 = new Form6();
             frm1.Show();
+            this.Close();
         }
     }
 }

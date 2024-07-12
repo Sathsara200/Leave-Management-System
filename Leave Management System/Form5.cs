@@ -37,5 +37,17 @@ namespace Leave_Management_System
             frm1.Show();
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form13 frm1 = new Form13();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

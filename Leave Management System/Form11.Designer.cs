@@ -40,8 +40,6 @@
             this.lblDate_Of_Birth = new System.Windows.Forms.Label();
             this.txtCity = new System.Windows.Forms.TextBox();
             this.lblCity = new System.Windows.Forms.Label();
-            this.txtSalary = new System.Windows.Forms.TextBox();
-            this.lblSalary = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -53,6 +51,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lblGender = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,6 +113,7 @@
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtPhoneNumber.Location = new System.Drawing.Point(137, 174);
             this.txtPhoneNumber.Multiline = true;
             this.txtPhoneNumber.Name = "txtPhoneNumber";
@@ -172,35 +172,16 @@
             // 
             this.lblCity.AutoSize = true;
             this.lblCity.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(671, 140);
+            this.lblCity.Location = new System.Drawing.Point(671, 139);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(32, 17);
             this.lblCity.TabIndex = 2;
             this.lblCity.Text = "City";
             // 
-            // txtSalary
-            // 
-            this.txtSalary.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalary.Location = new System.Drawing.Point(776, 174);
-            this.txtSalary.Multiline = true;
-            this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(481, 22);
-            this.txtSalary.TabIndex = 1;
-            // 
-            // lblSalary
-            // 
-            this.lblSalary.AutoSize = true;
-            this.lblSalary.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSalary.Location = new System.Drawing.Point(671, 180);
-            this.lblSalary.Name = "lblSalary";
-            this.lblSalary.Size = new System.Drawing.Size(46, 17);
-            this.lblSalary.TabIndex = 2;
-            this.lblSalary.Text = "Salary";
-            // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(776, 214);
+            this.txtPassword.Location = new System.Drawing.Point(776, 174);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(481, 22);
@@ -210,7 +191,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(671, 220);
+            this.lblPassword.Location = new System.Drawing.Point(671, 179);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(66, 17);
             this.lblPassword.TabIndex = 2;
@@ -324,12 +305,27 @@
             this.txtAddress.Size = new System.Drawing.Size(481, 22);
             this.txtAddress.TabIndex = 1;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Red;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(761, 250);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(86, 25);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1269, 714);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnReset);
@@ -338,7 +334,6 @@
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblSalary);
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.lblDate_Of_Birth);
             this.Controls.Add(this.lblGender);
@@ -347,7 +342,6 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblEmpId);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtSalary);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtGender);
@@ -378,8 +372,6 @@
         private System.Windows.Forms.Label lblDate_Of_Birth;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.Label lblCity;
-        private System.Windows.Forms.TextBox txtSalary;
-        private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnUpdate;
@@ -391,5 +383,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Button btnBack;
     }
 }

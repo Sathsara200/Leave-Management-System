@@ -114,7 +114,7 @@ namespace Leave_Management_System
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form5 frm1 = new Form5();
+            Form13 frm1 = new Form13();
             frm1.Show();
             this.Close();
         }
@@ -122,6 +122,20 @@ namespace Leave_Management_System
         private void Form9_Load(object sender, EventArgs e)
         {
             LoadData("select * from Emp_Leave ");
+        }
+
+        private void btnPendingLeave_Click(object sender, EventArgs e)
+        {
+            Form10 frm1 = new Form10();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form14 frm1 = new Form14();
+            frm1.Show();
+            this.Close();
         }
     }
 }
