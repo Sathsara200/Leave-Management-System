@@ -167,5 +167,21 @@ namespace Leave_Management_System
         {
            
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == true)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        
+
+      
     }
 }
