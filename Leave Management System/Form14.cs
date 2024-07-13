@@ -21,7 +21,6 @@ namespace Leave_Management_System
 
         private void Form14_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable(); // Single data table for joined results
 
             try
             {
