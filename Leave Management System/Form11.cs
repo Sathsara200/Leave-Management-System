@@ -171,7 +171,6 @@ namespace Leave_Management_System
                     cmd.Parameters.AddWithValue("@City", txtCity.Text);
                     // Convert salary to appropriate numeric type (e.g., decimal, double) if needed
                   
-                    cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
 

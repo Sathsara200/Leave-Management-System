@@ -36,7 +36,6 @@ namespace Leave_Management_System
             cmd.Parameters.AddWithValue("@Date_Of_Birth", this.dateTimePicker1.Text);
             cmd.Parameters.AddWithValue("@Gender",txtGender.Text);
             cmd.Parameters.AddWithValue("@City", txtCity.Text);
-            
             cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
 
