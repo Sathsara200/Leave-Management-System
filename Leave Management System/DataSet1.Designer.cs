@@ -279,13 +279,9 @@ namespace Leave_Management_System {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
-            private global::System.Data.DataColumn columnName;
-            
-            private global::System.Data.DataColumn columnLeave_Id;
+            private global::System.Data.DataColumn columnLeave_Type;
             
             private global::System.Data.DataColumn columnEmploye_Id;
-            
-            private global::System.Data.DataColumn columnLeave_Type;
             
             private global::System.Data.DataColumn columnApplied_Date;
             
@@ -293,11 +289,13 @@ namespace Leave_Management_System {
             
             private global::System.Data.DataColumn columnDate_Of_Commencing_Leave;
             
-            private global::System.Data.DataColumn columnDate_Of_Recumming_Duties;
+            private global::System.Data.DataColumn columnDate_Of_Resuming_Duties;
             
             private global::System.Data.DataColumn columnDescription;
             
             private global::System.Data.DataColumn columnAdmin_Remark;
+            
+            private global::System.Data.DataColumn columnName;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -334,17 +332,9 @@ namespace Leave_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NameColumn {
+            public global::System.Data.DataColumn Leave_TypeColumn {
                 get {
-                    return this.columnName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Leave_IdColumn {
-                get {
-                    return this.columnLeave_Id;
+                    return this.columnLeave_Type;
                 }
             }
             
@@ -353,14 +343,6 @@ namespace Leave_Management_System {
             public global::System.Data.DataColumn Employe_IdColumn {
                 get {
                     return this.columnEmploye_Id;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Leave_TypeColumn {
-                get {
-                    return this.columnLeave_Type;
                 }
             }
             
@@ -390,9 +372,9 @@ namespace Leave_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Date_Of_Recumming_DutiesColumn {
+            public global::System.Data.DataColumn Date_Of_Resuming_DutiesColumn {
                 get {
-                    return this.columnDate_Of_Recumming_Duties;
+                    return this.columnDate_Of_Resuming_Duties;
                 }
             }
             
@@ -409,6 +391,14 @@ namespace Leave_Management_System {
             public global::System.Data.DataColumn Admin_RemarkColumn {
                 get {
                     return this.columnAdmin_Remark;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NameColumn {
+                get {
+                    return this.columnName;
                 }
             }
             
@@ -449,29 +439,21 @@ namespace Leave_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Name, int Employe_Id, string Leave_Type, System.DateTime Applied_Date, int Count_Of_Days, System.DateTime Date_Of_Commencing_Leave, System.DateTime Date_Of_Recumming_Duties, string Description, string Admin_Remark) {
+            public DataTable1Row AddDataTable1Row(string Leave_Type, int Employe_Id, System.DateTime Applied_Date, int Count_Of_Days, System.DateTime Date_Of_Commencing_Leave, System.DateTime Date_Of_Resuming_Duties, string Description, string Admin_Remark, string Name) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Name,
-                        null,
-                        Employe_Id,
                         Leave_Type,
+                        Employe_Id,
                         Applied_Date,
                         Count_Of_Days,
                         Date_Of_Commencing_Leave,
-                        Date_Of_Recumming_Duties,
+                        Date_Of_Resuming_Duties,
                         Description,
-                        Admin_Remark};
+                        Admin_Remark,
+                        Name};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row FindByLeave_Id(int Leave_Id) {
-                return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            Leave_Id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -491,62 +473,45 @@ namespace Leave_Management_System {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnName = base.Columns["Name"];
-                this.columnLeave_Id = base.Columns["Leave_Id"];
-                this.columnEmploye_Id = base.Columns["Employe_Id"];
                 this.columnLeave_Type = base.Columns["Leave_Type"];
+                this.columnEmploye_Id = base.Columns["Employe_Id"];
                 this.columnApplied_Date = base.Columns["Applied_Date"];
                 this.columnCount_Of_Days = base.Columns["Count_Of_Days"];
                 this.columnDate_Of_Commencing_Leave = base.Columns["Date_Of_Commencing_Leave"];
-                this.columnDate_Of_Recumming_Duties = base.Columns["Date_Of_Recumming_Duties"];
+                this.columnDate_Of_Resuming_Duties = base.Columns["Date_Of_Resuming_Duties"];
                 this.columnDescription = base.Columns["Description"];
                 this.columnAdmin_Remark = base.Columns["Admin_Remark"];
+                this.columnName = base.Columns["Name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnName);
-                this.columnLeave_Id = new global::System.Data.DataColumn("Leave_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLeave_Id);
-                this.columnEmploye_Id = new global::System.Data.DataColumn("Employe_Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmploye_Id);
                 this.columnLeave_Type = new global::System.Data.DataColumn("Leave_Type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLeave_Type);
+                this.columnEmploye_Id = new global::System.Data.DataColumn("Employe_Id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmploye_Id);
                 this.columnApplied_Date = new global::System.Data.DataColumn("Applied_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnApplied_Date);
                 this.columnCount_Of_Days = new global::System.Data.DataColumn("Count_Of_Days", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCount_Of_Days);
                 this.columnDate_Of_Commencing_Leave = new global::System.Data.DataColumn("Date_Of_Commencing_Leave", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate_Of_Commencing_Leave);
-                this.columnDate_Of_Recumming_Duties = new global::System.Data.DataColumn("Date_Of_Recumming_Duties", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDate_Of_Recumming_Duties);
+                this.columnDate_Of_Resuming_Duties = new global::System.Data.DataColumn("Date_Of_Resuming_Duties", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate_Of_Resuming_Duties);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
                 this.columnAdmin_Remark = new global::System.Data.DataColumn("Admin_Remark", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAdmin_Remark);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnLeave_Id}, true));
-                this.columnName.AllowDBNull = false;
-                this.columnName.MaxLength = 255;
-                this.columnLeave_Id.AutoIncrement = true;
-                this.columnLeave_Id.AutoIncrementSeed = -1;
-                this.columnLeave_Id.AutoIncrementStep = -1;
-                this.columnLeave_Id.AllowDBNull = false;
-                this.columnLeave_Id.ReadOnly = true;
-                this.columnLeave_Id.Unique = true;
-                this.columnEmploye_Id.AllowDBNull = false;
+                this.columnName = new global::System.Data.DataColumn("Name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnName);
                 this.columnLeave_Type.AllowDBNull = false;
                 this.columnLeave_Type.MaxLength = 50;
-                this.columnApplied_Date.AllowDBNull = false;
-                this.columnCount_Of_Days.AllowDBNull = false;
-                this.columnDate_Of_Commencing_Leave.AllowDBNull = false;
-                this.columnDate_Of_Recumming_Duties.AllowDBNull = false;
-                this.columnDescription.AllowDBNull = false;
+                this.columnEmploye_Id.AllowDBNull = false;
                 this.columnDescription.MaxLength = 255;
-                this.columnAdmin_Remark.AllowDBNull = false;
-                this.columnAdmin_Remark.MaxLength = 60;
+                this.columnAdmin_Remark.MaxLength = 50;
+                this.columnName.AllowDBNull = false;
+                this.columnName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -689,23 +654,12 @@ namespace Leave_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Name {
+            public string Leave_Type {
                 get {
-                    return ((string)(this[this.tableDataTable1.NameColumn]));
+                    return ((string)(this[this.tableDataTable1.Leave_TypeColumn]));
                 }
                 set {
-                    this[this.tableDataTable1.NameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Leave_Id {
-                get {
-                    return ((int)(this[this.tableDataTable1.Leave_IdColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.Leave_IdColumn] = value;
+                    this[this.tableDataTable1.Leave_TypeColumn] = value;
                 }
             }
             
@@ -722,20 +676,14 @@ namespace Leave_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string Leave_Type {
-                get {
-                    return ((string)(this[this.tableDataTable1.Leave_TypeColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.Leave_TypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime Applied_Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDataTable1.Applied_DateColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDataTable1.Applied_DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Applied_Date\' in table \'DataTable1\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataTable1.Applied_DateColumn] = value;
@@ -746,7 +694,12 @@ namespace Leave_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Count_Of_Days {
                 get {
-                    return ((int)(this[this.tableDataTable1.Count_Of_DaysColumn]));
+                    try {
+                        return ((int)(this[this.tableDataTable1.Count_Of_DaysColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Count_Of_Days\' in table \'DataTable1\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataTable1.Count_Of_DaysColumn] = value;
@@ -757,7 +710,12 @@ namespace Leave_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime Date_Of_Commencing_Leave {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDataTable1.Date_Of_Commencing_LeaveColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDataTable1.Date_Of_Commencing_LeaveColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Of_Commencing_Leave\' in table \'DataTable1\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataTable1.Date_Of_Commencing_LeaveColumn] = value;
@@ -766,12 +724,17 @@ namespace Leave_Management_System {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Date_Of_Recumming_Duties {
+            public System.DateTime Date_Of_Resuming_Duties {
                 get {
-                    return ((global::System.DateTime)(this[this.tableDataTable1.Date_Of_Recumming_DutiesColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableDataTable1.Date_Of_Resuming_DutiesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Date_Of_Resuming_Duties\' in table \'DataTable1\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableDataTable1.Date_Of_Recumming_DutiesColumn] = value;
+                    this[this.tableDataTable1.Date_Of_Resuming_DutiesColumn] = value;
                 }
             }
             
@@ -779,7 +742,12 @@ namespace Leave_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Description {
                 get {
-                    return ((string)(this[this.tableDataTable1.DescriptionColumn]));
+                    try {
+                        return ((string)(this[this.tableDataTable1.DescriptionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'DataTable1\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataTable1.DescriptionColumn] = value;
@@ -790,11 +758,99 @@ namespace Leave_Management_System {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Admin_Remark {
                 get {
-                    return ((string)(this[this.tableDataTable1.Admin_RemarkColumn]));
+                    try {
+                        return ((string)(this[this.tableDataTable1.Admin_RemarkColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Admin_Remark\' in table \'DataTable1\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableDataTable1.Admin_RemarkColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Name {
+                get {
+                    return ((string)(this[this.tableDataTable1.NameColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.NameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsApplied_DateNull() {
+                return this.IsNull(this.tableDataTable1.Applied_DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetApplied_DateNull() {
+                this[this.tableDataTable1.Applied_DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCount_Of_DaysNull() {
+                return this.IsNull(this.tableDataTable1.Count_Of_DaysColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCount_Of_DaysNull() {
+                this[this.tableDataTable1.Count_Of_DaysColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDate_Of_Commencing_LeaveNull() {
+                return this.IsNull(this.tableDataTable1.Date_Of_Commencing_LeaveColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDate_Of_Commencing_LeaveNull() {
+                this[this.tableDataTable1.Date_Of_Commencing_LeaveColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDate_Of_Resuming_DutiesNull() {
+                return this.IsNull(this.tableDataTable1.Date_Of_Resuming_DutiesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDate_Of_Resuming_DutiesNull() {
+                this[this.tableDataTable1.Date_Of_Resuming_DutiesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDescriptionNull() {
+                return this.IsNull(this.tableDataTable1.DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDescriptionNull() {
+                this[this.tableDataTable1.DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAdmin_RemarkNull() {
+                return this.IsNull(this.tableDataTable1.Admin_RemarkColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAdmin_RemarkNull() {
+                this[this.tableDataTable1.Admin_RemarkColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -957,16 +1013,15 @@ namespace Leave_Management_System.DataSet1TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
-            tableMapping.ColumnMappings.Add("Name", "Name");
-            tableMapping.ColumnMappings.Add("Leave_Id", "Leave_Id");
-            tableMapping.ColumnMappings.Add("Employe_Id", "Employe_Id");
             tableMapping.ColumnMappings.Add("Leave_Type", "Leave_Type");
+            tableMapping.ColumnMappings.Add("Employe_Id", "Employe_Id");
             tableMapping.ColumnMappings.Add("Applied_Date", "Applied_Date");
             tableMapping.ColumnMappings.Add("Count_Of_Days", "Count_Of_Days");
             tableMapping.ColumnMappings.Add("Date_Of_Commencing_Leave", "Date_Of_Commencing_Leave");
-            tableMapping.ColumnMappings.Add("Date_Of_Recumming_Duties", "Date_Of_Recumming_Duties");
+            tableMapping.ColumnMappings.Add("Date_Of_Resuming_Duties", "Date_Of_Resuming_Duties");
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("Admin_Remark", "Admin_Remark");
+            tableMapping.ColumnMappings.Add("Name", "Name");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -974,7 +1029,7 @@ namespace Leave_Management_System.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Leave_Management_System.Properties.Settings.Default.Leave_Management_SystemConnectionString;
+            this._connection.ConnectionString = global::Leave_Management_System.Properties.Settings.Default.Leave_Management_SystemConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -983,8 +1038,10 @@ namespace Leave_Management_System.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT Employe.Name, Emp_Leave.Leave_Id, Emp_Leave.Employe_Id, Emp_Leave.Leave_Type, Emp_Leave.Applied_Date, Emp_Leave.Count_Of_Days, Emp_Leave.Date_Of_Commencing_Leave, Emp_Leave.Date_Of_Recumming_Duties, Emp_Leave.Description, Emp_Leave.Admin_Remark
-FROM Employe INNER JOIN Emp_Leave ON Employe.Employe_Id = Emp_Leave.Employe_Id";
+            this._commandCollection[0].CommandText = @"SELECT Emp_Leave.Leave_Type, Emp_Leave.Employe_Id, Emp_Leave.Applied_Date, Emp_Leave.Count_Of_Days, Emp_Leave.Date_Of_Commencing_Leave, Emp_Leave.Date_Of_Resuming_Duties, Emp_Leave.Description, 
+                  Emp_Leave.Admin_Remark, Employe.Name
+FROM     Emp_Leave INNER JOIN
+                  Employe ON Emp_Leave.Employe_Id = Employe.Employe_Id";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -2,34 +2,36 @@
 <xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Leave_Management_SystemConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Leave_Management_SystemConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Leave_Management_System.Properties.Settings.GlobalReference.Default.Leave_Management_SystemConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Leave_Management_SystemConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Leave_Management_SystemConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Leave_Management_System.Properties.Settings.GlobalReference.Default.Leave_Management_SystemConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Leave_Management_SystemConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Leave_Management_SystemConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Employe.Name, Emp_Leave.Leave_Id, Emp_Leave.Employe_Id, Emp_Leave.Leave_Type, Emp_Leave.Applied_Date, Emp_Leave.Count_Of_Days, Emp_Leave.Date_Of_Commencing_Leave, Emp_Leave.Date_Of_Recumming_Duties, Emp_Leave.Description, Emp_Leave.Admin_Remark
-FROM Employe INNER JOIN Emp_Leave ON Employe.Employe_Id = Emp_Leave.Employe_Id</CommandText>
+                    <CommandText>SELECT Emp_Leave.Leave_Type, Emp_Leave.Employe_Id, Emp_Leave.Applied_Date, Emp_Leave.Count_Of_Days, Emp_Leave.Date_Of_Commencing_Leave, Emp_Leave.Date_Of_Resuming_Duties, Emp_Leave.Description, 
+                  Emp_Leave.Admin_Remark, Employe.Name
+FROM     Emp_Leave INNER JOIN
+                  Employe ON Emp_Leave.Employe_Id = Employe.Employe_Id</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="Leave_Id" DataSetColumn="Leave_Id" />
-              <Mapping SourceColumn="Employe_Id" DataSetColumn="Employe_Id" />
               <Mapping SourceColumn="Leave_Type" DataSetColumn="Leave_Type" />
+              <Mapping SourceColumn="Employe_Id" DataSetColumn="Employe_Id" />
               <Mapping SourceColumn="Applied_Date" DataSetColumn="Applied_Date" />
               <Mapping SourceColumn="Count_Of_Days" DataSetColumn="Count_Of_Days" />
               <Mapping SourceColumn="Date_Of_Commencing_Leave" DataSetColumn="Date_Of_Commencing_Leave" />
-              <Mapping SourceColumn="Date_Of_Recumming_Duties" DataSetColumn="Date_Of_Recumming_Duties" />
+              <Mapping SourceColumn="Date_Of_Resuming_Duties" DataSetColumn="Date_Of_Resuming_Duties" />
               <Mapping SourceColumn="Description" DataSetColumn="Description" />
               <Mapping SourceColumn="Admin_Remark" DataSetColumn="Admin_Remark" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -44,15 +46,6 @@ FROM Employe INNER JOIN Emp_Leave ON Employe.Employe_Id = Emp_Leave.Employe_Id</
         <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="255" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Leave_Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="Leave_Id" msprop:Generator_ColumnPropNameInTable="Leave_IdColumn" msprop:Generator_ColumnVarNameInTable="columnLeave_Id" msprop:Generator_UserColumnName="Leave_Id" type="xs:int" />
-              <xs:element name="Employe_Id" msprop:Generator_ColumnPropNameInRow="Employe_Id" msprop:Generator_ColumnPropNameInTable="Employe_IdColumn" msprop:Generator_ColumnVarNameInTable="columnEmploye_Id" msprop:Generator_UserColumnName="Employe_Id" type="xs:int" />
               <xs:element name="Leave_Type" msprop:Generator_ColumnPropNameInRow="Leave_Type" msprop:Generator_ColumnPropNameInTable="Leave_TypeColumn" msprop:Generator_ColumnVarNameInTable="columnLeave_Type" msprop:Generator_UserColumnName="Leave_Type">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -60,21 +53,29 @@ FROM Employe INNER JOIN Emp_Leave ON Employe.Employe_Id = Emp_Leave.Employe_Id</
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Applied_Date" msprop:Generator_ColumnPropNameInRow="Applied_Date" msprop:Generator_ColumnPropNameInTable="Applied_DateColumn" msprop:Generator_ColumnVarNameInTable="columnApplied_Date" msprop:Generator_UserColumnName="Applied_Date" type="xs:dateTime" />
-              <xs:element name="Count_Of_Days" msprop:Generator_ColumnPropNameInRow="Count_Of_Days" msprop:Generator_ColumnPropNameInTable="Count_Of_DaysColumn" msprop:Generator_ColumnVarNameInTable="columnCount_Of_Days" msprop:Generator_UserColumnName="Count_Of_Days" type="xs:int" />
-              <xs:element name="Date_Of_Commencing_Leave" msprop:Generator_ColumnPropNameInRow="Date_Of_Commencing_Leave" msprop:Generator_ColumnPropNameInTable="Date_Of_Commencing_LeaveColumn" msprop:Generator_ColumnVarNameInTable="columnDate_Of_Commencing_Leave" msprop:Generator_UserColumnName="Date_Of_Commencing_Leave" type="xs:dateTime" />
-              <xs:element name="Date_Of_Recumming_Duties" msprop:Generator_ColumnPropNameInRow="Date_Of_Recumming_Duties" msprop:Generator_ColumnPropNameInTable="Date_Of_Recumming_DutiesColumn" msprop:Generator_ColumnVarNameInTable="columnDate_Of_Recumming_Duties" msprop:Generator_UserColumnName="Date_Of_Recumming_Duties" type="xs:dateTime" />
-              <xs:element name="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_UserColumnName="Description">
+              <xs:element name="Employe_Id" msprop:Generator_ColumnPropNameInRow="Employe_Id" msprop:Generator_ColumnPropNameInTable="Employe_IdColumn" msprop:Generator_ColumnVarNameInTable="columnEmploye_Id" msprop:Generator_UserColumnName="Employe_Id" type="xs:int" />
+              <xs:element name="Applied_Date" msprop:Generator_ColumnPropNameInRow="Applied_Date" msprop:Generator_ColumnPropNameInTable="Applied_DateColumn" msprop:Generator_ColumnVarNameInTable="columnApplied_Date" msprop:Generator_UserColumnName="Applied_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Count_Of_Days" msprop:Generator_ColumnPropNameInRow="Count_Of_Days" msprop:Generator_ColumnPropNameInTable="Count_Of_DaysColumn" msprop:Generator_ColumnVarNameInTable="columnCount_Of_Days" msprop:Generator_UserColumnName="Count_Of_Days" type="xs:int" minOccurs="0" />
+              <xs:element name="Date_Of_Commencing_Leave" msprop:Generator_ColumnPropNameInRow="Date_Of_Commencing_Leave" msprop:Generator_ColumnPropNameInTable="Date_Of_Commencing_LeaveColumn" msprop:Generator_ColumnVarNameInTable="columnDate_Of_Commencing_Leave" msprop:Generator_UserColumnName="Date_Of_Commencing_Leave" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Date_Of_Resuming_Duties" msprop:Generator_ColumnPropNameInRow="Date_Of_Resuming_Duties" msprop:Generator_ColumnPropNameInTable="Date_Of_Resuming_DutiesColumn" msprop:Generator_ColumnVarNameInTable="columnDate_Of_Resuming_Duties" msprop:Generator_UserColumnName="Date_Of_Resuming_Duties" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_UserColumnName="Description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Admin_Remark" msprop:Generator_ColumnPropNameInRow="Admin_Remark" msprop:Generator_ColumnPropNameInTable="Admin_RemarkColumn" msprop:Generator_ColumnVarNameInTable="columnAdmin_Remark" msprop:Generator_UserColumnName="Admin_Remark">
+              <xs:element name="Admin_Remark" msprop:Generator_ColumnPropNameInRow="Admin_Remark" msprop:Generator_ColumnPropNameInTable="Admin_RemarkColumn" msprop:Generator_ColumnVarNameInTable="columnAdmin_Remark" msprop:Generator_UserColumnName="Admin_Remark" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="60" />
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -83,9 +84,5 @@ FROM Employe INNER JOIN Emp_Leave ON Employe.Employe_Id = Emp_Leave.Employe_Id</
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DataTable1" />
-      <xs:field xpath="mstns:Leave_Id" />
-    </xs:unique>
   </xs:element>
 </xs:schema>

@@ -29,7 +29,7 @@ namespace Leave_Management_System
 
         }
        
-        string connectionString = @"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
+        string connectionString = @"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
         private DataTable dataTable;
         public void LData(string query)
         {

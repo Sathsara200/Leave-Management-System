@@ -21,7 +21,7 @@ namespace Leave_Management_System
             Instance = this;
         }
 
-        string connectionString = @"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
+        string connectionString = @"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
         internal Action<DataTable> DataLoaded;
 
         
@@ -53,7 +53,7 @@ namespace Leave_Management_System
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            LoadData("select * from Emp_Salary where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+            LoadData("select Employe_Id,Name from Employe where Employe_Id = '" + Form1.instance.tb1.Text + "'");
         }
     }
 }

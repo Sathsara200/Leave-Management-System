@@ -22,7 +22,7 @@ namespace Leave_Management_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
 
             SqlCommand cmd = new SqlCommand("insert into Employe values (@Name,@Phone_Number,@Address,@Date_Of_Birth,@Gender,@City,@Password)", con);
 

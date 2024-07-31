@@ -42,9 +42,9 @@ namespace Leave_Management_System
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
+            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
            
-            SqlCommand cmd = new SqlCommand("insert into Emp_Leave values (@Employe_Id,@Leave_Type,@Applied_Date,@Count_Of_Days,@Date_Of_Commencing_Leave,@Date_Of_Recumming_Duties,@Description,@Admin_Remark)", con);
+            SqlCommand cmd = new SqlCommand("insert into Emp_Leave values (@Employe_Id,@Leave_Type,@Applied_Date,@Count_Of_Days,@Date_Of_Commencing_Leave,@Date_Of_Resuming_Duties,@Description,@Admin_Remark)", con);
 
             cmd.Parameters.AddWithValue("@Admin_Remark", "Waiting for approval");
             
@@ -55,7 +55,7 @@ namespace Leave_Management_System
             cmd.Parameters.AddWithValue("@Applied_Date", this.dateTimePicker1.Text);
             cmd.Parameters.AddWithValue("@Count_Of_Days", txtCountOfDate.Text);
             cmd.Parameters.AddWithValue("@Date_Of_Commencing_Leave", this.dateTimePicker2.Text);
-            cmd.Parameters.AddWithValue("@Date_Of_Recumming_Duties", this.dateTimePicker3.Text);
+            cmd.Parameters.AddWithValue("@Date_Of_Resuming_Duties", this.dateTimePicker3.Text);
             cmd.Parameters.AddWithValue("@Description", txtDescription.Text);
            
 

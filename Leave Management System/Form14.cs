@@ -18,7 +18,7 @@ namespace Leave_Management_System
         {
             InitializeComponent();
         }
-
+        private DataTable dt = new DataTable(); // Declare the DataTable object
         private void Form14_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +29,7 @@ namespace Leave_Management_System
                     connection.Open();
 
                     // Inner join query (modify table and column names as needed)
-                    string sql = @"SELECT e.Name, el.Employe_Id, el.Leave_Type, el.Applied_Date, el.Count_Of_Days, el.Date_Of_Commencing_Leave, el.Date_Of_Recumming_Duties, el.Description, el.Admin_Remark
+                    string sql = @"SELECT e.Name, el.Employe_Id, el.Leave_Type, el.Applied_Date, el.Count_Of_Days, el.Date_Of_Commencing_Leave, el.Date_Of_Resuming_Duties, el.Description, el.Admin_Remark
                                    FROM Employe e
                                    INNER JOIN Emp_Leave el ON e.Employe_ID = el.Employe_ID;";
 
@@ -46,10 +46,10 @@ namespace Leave_Management_System
                 reportViewer1.LocalReport.DataSources.Clear();
 
                 // Add the data source with joined data
-                ReportDataSource source = new ReportDataSource("DataSet3", dt); // Adapt name to your RDLC report
+                ReportDataSource source = new ReportDataSource("DataSet1", dt); // Adapt name to your RDLC report
                 reportViewer1.LocalReport.DataSources.Add(source);
 
-                reportViewer1.LocalReport.ReportPath = @"C:\\Users\\Sathsara\\source\\repos\\Leave Management System\\Leave Management System\Report1.rdlc";
+                reportViewer1.LocalReport.ReportPath = "Report1.rdlc";
                 reportViewer1.RefreshReport();
             }
             catch (SqlException ex)
@@ -59,7 +59,7 @@ namespace Leave_Management_System
             }
             this.reportViewer1.RefreshReport();
         }
-        private string connectionString = @"Data Source=DESKTOP-J1972OJ\SQLEXPRESS;Initial Catalog=Leave Management System;Integrated Security=True;Encrypt=False";
+        private string connectionString = @"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
         
         
     }
