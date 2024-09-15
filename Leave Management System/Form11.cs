@@ -142,7 +142,7 @@ namespace Leave_Management_System
                 }
 
                 // Connection string handling
-                string connectionString = "Data Source=DESKTOP-J1972OJ\\SQLEXPRESS;Initial Catalog=\"Leave Management System\";Integrated Security=True;Encrypt=False";
+                string connectionString = "Data Source=DESKTOP-IM081Q0\\SQLEXPRESS;Initial Catalog=\"Leave Management System\";Integrated Security=True;Encrypt=False";
                 if (string.IsNullOrEmpty(connectionString))
                 {
                     MessageBox.Show("Connection string is missing. Please configure it.", "Error",
@@ -155,24 +155,14 @@ namespace Leave_Management_System
                     con.Open();
 
                     // Improved SQL command with parameterized queries
-                    SqlCommand cmd = new SqlCommand(
-                        "UPDATE Employe SET Name = @Name, Phone_Number = @Phone_Number, " +
-                        "Address = @Address, Date_Of_Birth = @Date_Of_Birth, Gender = @Gender, " +
-                        "City = @City, Password = @Password " +
-                        "WHERE Employe_Id = @EmployeId", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE Employe SET Name = '"+txtName.Text+"', Phone_Number = '"+int.Parse(txtPhoneNumber.Text)+"', Address = '"+txtAddress.Text+"', Date_Of_Birth = '"+this.dateTimePicker1.Text+"', Gender = '"+txtGender.Text+"', City = '"+txtCity.Text+"', Password = '"+txtPassword.Text+"' WHERE Employe_Id = '"+txtEmployeId.Text+"'", con);
 
                     // Add parameters with appropriate data types (consider using SqlParameter for more control)
-                    cmd.Parameters.AddWithValue("@EmployeId", txtEmployeId.Text);
-                    cmd.Parameters.AddWithValue("@Name", txtName.Text);
-                    cmd.Parameters.AddWithValue("@Phone_Number", txtPhoneNumber.Text);
-                    cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-                    cmd.Parameters.AddWithValue("@Date_Of_Birth", DateTime.Parse(dateTimePicker1.Text)); // Ensure valid date format
-                    cmd.Parameters.AddWithValue("@Gender", txtGender.Text);
-                    cmd.Parameters.AddWithValue("@City", txtCity.Text);
-                    // Convert salary to appropriate numeric type (e.g., decimal, double) if needed
+                   
                   
 
                     int rowsAffected = cmd.ExecuteNonQuery();
+                    con.Close();
 
                     if (rowsAffected > 0)
                     {
@@ -236,6 +226,13 @@ namespace Leave_Management_System
         private void btnBack_Click(object sender, EventArgs e)
         {
             Form13 frm1 = new Form13();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void btnRoaster_Click(object sender, EventArgs e)
+        {
+            Form15 frm1 = new Form15();
             frm1.Show();
             this.Close();
         }

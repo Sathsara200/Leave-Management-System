@@ -52,6 +52,7 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnRoaster = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -319,12 +320,27 @@
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnRoaster
+            // 
+            this.btnRoaster.BackColor = System.Drawing.Color.Blue;
+            this.btnRoaster.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRoaster.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRoaster.ForeColor = System.Drawing.Color.White;
+            this.btnRoaster.Location = new System.Drawing.Point(1171, 212);
+            this.btnRoaster.Name = "btnRoaster";
+            this.btnRoaster.Size = new System.Drawing.Size(86, 25);
+            this.btnRoaster.TabIndex = 7;
+            this.btnRoaster.Text = "Roaster";
+            this.btnRoaster.UseVisualStyleBackColor = false;
+            this.btnRoaster.Click += new System.EventHandler(this.btnRoaster_Click);
+            // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1269, 714);
+            this.Controls.Add(this.btnRoaster);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtSearch);
@@ -384,5 +400,6 @@
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnRoaster;
     }
 }
