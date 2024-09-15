@@ -132,7 +132,6 @@ namespace Leave_Management_System
                     cmd.Parameters.AddWithValue("@End_Time", DateTime.Parse(dateTimePicker2.Text));
                     cmd.Parameters.AddWithValue("@Meridian", txtMeridian.Text); // Ensure valid date format
                    
-                    // Convert salary to appropriate numeric type (e.g., decimal, double) if needed
 
 
                     int rowsAffected = cmd.ExecuteNonQuery();
