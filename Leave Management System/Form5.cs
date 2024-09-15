@@ -49,5 +49,10 @@ namespace Leave_Management_System
         {
 
         }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

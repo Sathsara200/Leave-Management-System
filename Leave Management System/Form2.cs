@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Reflection.Emit;
 using System.Windows.Forms;
 
 namespace Leave_Management_System
@@ -9,12 +10,14 @@ namespace Leave_Management_System
     {
         public static Form2 Instance;
         public static Form2 value { get; private set; }
+        public static Form2 lvalue { get; private set; }
        
         public Form2()
         {
             InitializeComponent();
             Instance = this;
             value = this;
+            lvalue = this;
           
 
         }
@@ -45,10 +48,31 @@ namespace Leave_Management_System
 
         }
 
+        public void loadLbl()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                lblAnnual.Text = reader["annual_leaves"].ToString(); // Get the value from the "annual" column
+                lblCasual.Text = reader["casual_leaves"].ToString();
+                lblShorts.Text = reader["shorts_leaves"].ToString();
+
+                reader.Close();
+
+            }
+        }
+
        
     private void Form1_Load(object sender, EventArgs e)
         {
             LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+            loadLbl();
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

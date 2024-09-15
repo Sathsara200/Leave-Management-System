@@ -52,10 +52,10 @@ namespace Leave_Management_System
 
         private void txtUserId_Leave(object sender, EventArgs e)
         {
-            if (txtUserId.Text == "")
+            if ( txtUserId.Text == "" )
             {
-                txtUserId.Text = "Enter user id or user name";
-                txtUserId.ForeColor = Color.Silver;
+                txtUserId.Text = "Enter user id or user name" ;
+                txtUserId.ForeColor = Color.Silver ;
             }
         }
 

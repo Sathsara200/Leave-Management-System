@@ -59,7 +59,7 @@ namespace Leave_Management_System
 
         private void Form11_Load(object sender, EventArgs e)
         {
-            LData("select * from Employe"); // Assuming LData() refreshes form data
+            LData("select Employe_Id, Name, Phone_Number, Address, Date_Of_Birth, Gender, City, Password  from Employe"); // Assuming LData() refreshes form data
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -72,7 +72,7 @@ namespace Leave_Management_System
                 return;
             }
 
-            using (var connection = new SqlConnection("Data Source=DESKTOP-J1972OJ\\SQLEXPRESS;Initial Catalog=\"Leave Management System\";Integrated Security=True;Encrypt=False"))
+            using (var connection = new SqlConnection("Data Source=DESKTOP-IM081Q0\\SQLEXPRESS;Initial Catalog=\"Leave Management System\";Integrated Security=True;Encrypt=False"))
             {
                 try
                 {
@@ -95,7 +95,7 @@ namespace Leave_Management_System
                     }
 
                     MessageBox.Show("Deletion successful!");
-                    LData("select * from Employe");
+                    LData("select Employe_Id, Name, Phone_Number, Address, Date_Of_Birth, Gender, City, Password from Employe");
                 }
                 catch (SqlException ex)
                 {
@@ -178,7 +178,7 @@ namespace Leave_Management_System
                     {
                         MessageBox.Show("Record successfully updated!", "Update",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LData("select * from Employe"); // Assuming LoadData() refreshes form data
+                        LData("select Employe_Id, Name, Phone_Number, Address, Date_Of_Birth, Gender, City, Password from Employe"); // Assuming LoadData() refreshes form data
                     }
                     else
                     {
@@ -218,7 +218,7 @@ namespace Leave_Management_System
                 if (txtSearch.Text != "")
                 {
 
-                    LData("select * from Employe where Employe_Id = '" + txtSearch.Text + "'");
+                    LData("select  Employe_Id, Name, Phone_Number, Address, Date_Of_Birth, Gender, City, Password from Employe where Employe_Id = '" + txtSearch.Text + "'");
 
                 }
                 else

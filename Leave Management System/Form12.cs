@@ -24,7 +24,7 @@ namespace Leave_Management_System
         {
             SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
 
-            SqlCommand cmd = new SqlCommand("insert into Employe values (@Name,@Phone_Number,@Address,@Date_Of_Birth,@Gender,@City,@Password)", con);
+            SqlCommand cmd = new SqlCommand("insert into Employe values (@Name,@Phone_Number,@Address,@Date_Of_Birth,@Gender,@City,@Password,@annual_leaves,@casual_leaves,@shorts_leaves)", con);
 
             
 
@@ -37,6 +37,9 @@ namespace Leave_Management_System
             cmd.Parameters.AddWithValue("@Gender",txtGender.Text);
             cmd.Parameters.AddWithValue("@City", txtCity.Text);
             cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
+            cmd.Parameters.AddWithValue("@annual_leaves", 4);
+            cmd.Parameters.AddWithValue("@casual_leaves", 8);
+            cmd.Parameters.AddWithValue("@shorts_leaves", 2);
 
             con.Open();
             cmd.ExecuteNonQuery();
@@ -44,12 +47,13 @@ namespace Leave_Management_System
 
             MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Form11.Lvalue.LData("select * from Employe");
+            Form11.Lvalue.LData("select Employe_Id, Name, Phone_Number, Address, Date_Of_Birth, Gender, City, Password from Employe");
         }
 
+        private void Form12_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }
 

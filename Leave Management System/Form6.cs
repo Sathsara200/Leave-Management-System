@@ -108,5 +108,10 @@ namespace Leave_Management_System
         {
             Application.Exit();
         }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
