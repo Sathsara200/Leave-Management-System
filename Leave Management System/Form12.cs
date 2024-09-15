@@ -38,7 +38,6 @@ namespace Leave_Management_System
             cmd.Parameters.AddWithValue("@City", txtCity.Text);
             cmd.Parameters.AddWithValue("@Password", txtPassword.Text);
 
-
             con.Open();
             cmd.ExecuteNonQuery();
             
