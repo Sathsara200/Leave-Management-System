@@ -125,12 +125,6 @@ namespace Leave_Management_System
                         "Start_Time = @Start_Time, End_Time = @End_Time, Meridian = @Meridian, " +
                         "WHERE Employe_Id = @EmployeId", con);
 
-                    // Add parameters with appropriate data types (consider using SqlParameter for more control)
-                    cmd.Parameters.AddWithValue("@Roaster_Id", txtRoaster.Text);
-                    cmd.Parameters.AddWithValue("@Employe_Id", txtEmploye.Text);
-                    cmd.Parameters.AddWithValue("@Start_Time", DateTime.Parse(dateTimePicker1.Text));
-                    cmd.Parameters.AddWithValue("@End_Time", DateTime.Parse(dateTimePicker2.Text));
-                    cmd.Parameters.AddWithValue("@Meridian", txtMeridian.Text); // Ensure valid date format
                    
 
 

@@ -52,16 +52,9 @@ namespace Leave_Management_System
 
 
           
-            try 
-            {
-                SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
-
-                SqlCommand cmd = new SqlCommand("insert into Emp_Leave values ('"+int.Parse(Form1.instance.tb1.Text)+ "','"+comboBox1.Text+ "','"+dateTimePicker1.Text+ "','"+int.Parse(txtCountOfDate.Text)+ "','"+dateTimePicker2.Text+ "','"+dateTimePicker3.Text+ "','"+txtDescription.Text+ "','"+"Waiting for approval"+ "')", con);
 
 
-             
-                con.Open();
-                cmd.ExecuteNonQuery();
+
 
 
 
@@ -74,9 +67,6 @@ namespace Leave_Management_System
                 MessageBox.Show("An error occurred during update: " + ex.Message, "Error",
                                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-
-           // }
 
 
 
@@ -102,21 +92,7 @@ namespace Leave_Management_System
         }
         private void Form3_Load(object sender, EventArgs e)
         {
-           using (SqlConnection connection = new SqlConnection(connectionString))
-           {
-            connection.Open();
 
-            string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
-            SqlCommand cmd = new SqlCommand(sql, connection);
-            SqlDataReader reader = cmd.ExecuteReader();
-            reader.Read(); // Assuming you want the first row
-            int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
-            int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
-            int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
-
-            reader.Close();
-            connection.Close();
-           }
         }
     }
 }
