@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Reflection.Emit;
 using System.Windows.Forms;
 
@@ -75,6 +76,100 @@ namespace Leave_Management_System
            
         }
 
+        public void Annual()
+        {
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                reader.Close();
+                annual = annual + 1;
+                SqlCommand cmmd = new SqlCommand("UPDATE Employe SET annual_leaves = '" + annual + "' WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'", connection);
+
+                //cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
+                //cmd.Parameters.AddWithValue("@annual_leaves", annual);
+
+
+                cmmd.ExecuteNonQuery();
+                connection.Close();
+
+                loadLbl();
+
+            }
+        }
+
+        public void Casual()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                reader.Close();
+                casual = casual + 1;
+                SqlCommand cmmd = new SqlCommand("UPDATE Employe SET casual_leaves = '" + casual + "' WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'", connection);
+
+                //cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
+                //cmd.Parameters.AddWithValue("@annual_leaves", annual);
+
+
+                cmmd.ExecuteNonQuery();
+                connection.Close();
+
+                loadLbl();
+
+            }
+        }
+
+        public void Shorts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                reader.Close();
+                shorts = shorts + 1;
+                SqlCommand cmmd = new SqlCommand("UPDATE Employe SET shorts_leaves = '" + shorts + "' WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'", connection);
+
+                //cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
+                //cmd.Parameters.AddWithValue("@annual_leaves", annual);
+
+
+                cmmd.ExecuteNonQuery();
+                connection.Close();
+
+                loadLbl();
+
+            }
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -98,12 +193,53 @@ namespace Leave_Management_System
                         try
                         {
                             con.Open();
-                            SqlCommand com = new SqlCommand("UPDATE Emp_Leave SET Admin_Remark = 'Canceled' WHERE Leave_Id = @id", con);
-                            com.Parameters.AddWithValue("@id", id); // Use parameterized queries to prevent SQL injection
-                            com.ExecuteNonQuery();
-                            MessageBox.Show("Successfully canceled.");
-                            int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
-                            LoadData("select * from Emp_Leave where Employe_Id = '" + ip + "'");
+
+                            
+                            int i = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Leave_Id"].FormattedValue.ToString());
+
+                            string sq = "SELECT  Leave_Type FROM Emp_Leave WHERE Leave_Id = '" + i + "'";
+                            SqlCommand cd = new SqlCommand(sq, con);
+                            SqlDataReader rader = cd.ExecuteReader();
+                            rader.Read(); // Assuming you want the first row
+                            String Type = (string)rader["Leave_Type"]; // Get the value from the "annual" column
+
+                           
+                            rader.Close();
+
+                            if (Type == "Annual")
+                            {
+                               
+                                SqlCommand com = new SqlCommand("UPDATE Emp_Leave SET Admin_Remark = 'Canceled' WHERE Leave_Id = @id", con);
+                                com.Parameters.AddWithValue("@id", id); // Use parameterized queries to prevent SQL injection
+                                com.ExecuteNonQuery();
+                                MessageBox.Show("Successfully canceled.");
+                                Annual();
+                                int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
+                                LoadData("select * from Emp_Leave where Employe_Id = '" + ip + "'");
+                            }
+                            else if (Type == "Casual")
+                            {
+                                
+                                SqlCommand com = new SqlCommand("UPDATE Emp_Leave SET Admin_Remark = 'Canceled' WHERE Leave_Id = @id", con);
+                                com.Parameters.AddWithValue("@id", id); // Use parameterized queries to prevent SQL injection
+                                com.ExecuteNonQuery();
+                                MessageBox.Show("Successfully canceled.");
+                                Casual();
+                                int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
+                                LoadData("select * from Emp_Leave where Employe_Id = '" + ip + "'");
+                            }
+                            else 
+                            {
+                                
+                                SqlCommand com = new SqlCommand("UPDATE Emp_Leave SET Admin_Remark = 'Canceled' WHERE Leave_Id = @id", con);
+                                com.Parameters.AddWithValue("@id", id); // Use parameterized queries to prevent SQL injection
+                                com.ExecuteNonQuery();
+                                MessageBox.Show("Successfully canceled.");
+                                Shorts();
+                                int ip = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Employe_Id"].FormattedValue.ToString());
+                                LoadData("select * from Emp_Leave where Employe_Id = '" + ip + "'");
+                            }
+                            
                         }
                         catch (Exception ex)
                         {
@@ -144,6 +280,13 @@ namespace Leave_Management_System
             Form6 frm1 = new Form6();
             frm1.Show();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form16 frm1 = new Form16();
+            frm1.Show();
+            
         }
     }
 }

@@ -11,22 +11,16 @@ using System.Windows.Forms;
 
 namespace Leave_Management_System
 {
-    public partial class Form7 : Form
+    public partial class Form17 : Form
     {
-        public static Form7 Instance;
-
-        public Form7()
+        public Form17()
         {
             InitializeComponent();
-            Instance = this;
         }
 
         string connectionString = @"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
-        internal Action<DataTable> DataLoaded;
-
-        
-
-        public void LoadData(string query)
+        private DataTable dataTable;
+        public void LData(string query)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -39,21 +33,18 @@ namespace Leave_Management_System
                     dataGridView1.AutoGenerateColumns = false;
                 }
             }
-
         }
-
-       
+        private void Form17_Load(object sender, EventArgs e)
+        {
+            LData("Select * from Roaster");
+        }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+
             Form6 frm1 = new Form6();
             frm1.Show();
             this.Close();
-        }
-
-        private void Form7_Load(object sender, EventArgs e)
-        {
-            LoadData("select Employe_Id,Name from Employe where Employe_Id = '" + Form1.instance.tb1.Text + "'");
         }
     }
 }

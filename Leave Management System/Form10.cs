@@ -39,7 +39,7 @@ namespace Leave_Management_System
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Form13 frm1 = new Form13();
+            Form9 frm1 = new Form9();
             frm1.Show();
             this.Close();
         }

@@ -58,5 +58,17 @@ namespace Leave_Management_System
         {
             LoadData("select Employe_Id,Name,Phone_Number,Address,Date_Of_Birth,Gender,City from Employe where Employe_Id = '" + Form1.instance.tb1.Text + "'");
         }
+
+        private void btnRoaster_Click(object sender, EventArgs e)
+        {
+            Form17 frm1 = new Form17();
+            frm1.Show();
+            this.Close();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

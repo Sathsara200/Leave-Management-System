@@ -86,6 +86,13 @@ namespace Leave_Management_System
                         childCommand.ExecuteNonQuery();
                     }
 
+                    string deleteSecondSql = "DELETE FROM Roaster WHERE Employe_Id = @id";
+                    using (var mainCommand = new SqlCommand(deleteSecondSql, connection))
+                    {
+                        mainCommand.Parameters.AddWithValue("@id", idToDelete);
+                        mainCommand.ExecuteNonQuery();
+                    }
+
                     // Delete the row with the primary key
                     string deleteMainSql = "DELETE FROM Employe WHERE Employe_Id = @id";
                     using (var mainCommand = new SqlCommand(deleteMainSql, connection))
@@ -93,6 +100,8 @@ namespace Leave_Management_System
                         mainCommand.Parameters.AddWithValue("@id", idToDelete);
                         mainCommand.ExecuteNonQuery();
                     }
+
+                   
 
                     MessageBox.Show("Deletion successful!");
                     LData("select Employe_Id, Name, Phone_Number, Address, Date_Of_Birth, Gender, City, Password from Employe");

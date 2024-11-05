@@ -51,7 +51,7 @@ namespace Leave_Management_System
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form5 frm1 = new Form5();
+            Form15 frm1 = new Form15();
             frm1.Show();
             this.Close();
         }
@@ -69,6 +69,13 @@ namespace Leave_Management_System
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form1 frm1 = new Form1();
+            frm1.Show();
+            this.Close();
         }
     }
 }

@@ -40,7 +40,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtLeave = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -162,24 +162,20 @@
             this.dateTimePicker3.Size = new System.Drawing.Size(315, 27);
             this.dateTimePicker3.TabIndex = 3;
             // 
-            // comboBox1
+            // txtLeave
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Annual ",
-            "Casual "});
-            this.comboBox1.Location = new System.Drawing.Point(213, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(315, 24);
-            this.comboBox1.TabIndex = 4;
+            this.txtLeave.Location = new System.Drawing.Point(213, 77);
+            this.txtLeave.Multiline = true;
+            this.txtLeave.Name = "txtLeave";
+            this.txtLeave.Size = new System.Drawing.Size(315, 27);
+            this.txtLeave.TabIndex = 4;
             // 
             // Apply
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 425);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtLeave);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
@@ -194,6 +190,7 @@
             this.Controls.Add(this.txtCountOfDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Apply";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Apply";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
@@ -214,6 +211,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtLeave;
     }
 }

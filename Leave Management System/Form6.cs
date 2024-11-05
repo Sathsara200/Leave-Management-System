@@ -31,9 +31,7 @@ namespace Leave_Management_System
 
         private void btnSalaryDetails_Click(object sender, EventArgs e)
         {
-            Form7 frm1 = new Form7();
-            frm1.Show();
-            this.Close();
+            
         }
 
         private void btnYourDetails_Click(object sender, EventArgs e)
@@ -78,7 +76,7 @@ namespace Leave_Management_System
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form7 frm1 = new Form7();
+            Form17 frm1 = new Form17();
             frm1.Show();
             this.Close();
         }
@@ -110,6 +108,11 @@ namespace Leave_Management_System
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

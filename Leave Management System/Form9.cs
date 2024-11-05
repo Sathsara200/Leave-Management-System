@@ -9,14 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace Leave_Management_System
 {
     public partial class Form9 : Form
     {
+        public static Form9 rnumber;
+        public System.Windows.Forms.TextBox num1;
         public Form9()
         {
             InitializeComponent();
+            rnumber = this;
+            num1 = txtSearch;
         }
 
         string connectionString = @"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False";
@@ -136,6 +141,65 @@ namespace Leave_Management_System
             Form14 frm1 = new Form14();
             frm1.Show();
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validate user input (if applicable)
+                if (string.IsNullOrEmpty(txtAnnual.Text) ||
+                    string.IsNullOrEmpty(txtCasual.Text) ||
+                    string.IsNullOrEmpty(txtShort.Text))
+                {
+                    MessageBox.Show("Please enter all required information.", "Validation Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; // Exit the method if validation fails
+                }
+
+                // Connection string handling
+                string connectionString = "Data Source=DESKTOP-IM081Q0\\SQLEXPRESS;Initial Catalog=\"Leave Management System\";Integrated Security=True;Encrypt=False";
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    MessageBox.Show("Connection string is missing. Please configure it.", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    // Improved SQL command with parameterized queries
+                    SqlCommand cmd = new SqlCommand("UPDATE Employe SET annual_leaves = '" + int.Parse(txtAnnual.Text) + "', casual_leaves = '" + int.Parse(txtCasual.Text) + "', shorts_leaves = '" + int.Parse(txtShort.Text) + "'", con);
+
+                    // Add parameters with appropriate data types (consider using SqlParameter for more control)
+
+
+
+                    int rowsAffected = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Record successfully updated!", "Update",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       // Assuming LoadData() refreshes form data
+                    }
+                    else
+                    {
+                        MessageBox.Show("No records were updated. Please check the provided data and try again.",
+                            "Update Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred during update: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
         }
     }
 }

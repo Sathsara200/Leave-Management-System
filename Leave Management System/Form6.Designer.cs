@@ -117,11 +117,12 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(703, 231);
+            this.label6.Location = new System.Drawing.Point(695, 231);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 28);
+            this.label6.Size = new System.Drawing.Size(156, 28);
             this.label6.TabIndex = 6;
-            this.label6.Text = "Salary Details";
+            this.label6.Text = "Roaster Details";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -136,7 +137,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Leave_Management_System.Properties.Resources.icons8_bribery_96;
+            this.pictureBox5.Image = global::Leave_Management_System.Properties.Resources.icons8_shift_48;
             this.pictureBox5.Location = new System.Drawing.Point(659, 38);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(223, 189);

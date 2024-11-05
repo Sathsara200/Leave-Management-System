@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using Microsoft.ReportingServices.Diagnostics.Internal;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,50 +50,211 @@ namespace Leave_Management_System
 
         private void btnApply_Click(object sender, EventArgs e)
         {
+                        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-IM081Q0\SQLEXPRESS;Initial Catalog=""Leave Management System"";Integrated Security=True;Encrypt=False");
+           
 
 
-          
+                try
+                {
+                    con.Open();
+
+                    string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                    SqlCommand cmd = new SqlCommand(sql, con);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read(); // Assuming you want the first row
+                    int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                    int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                    int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                    reader.Close();
+
+                  if (0 < annual && txtLeave.Text == "Annual")
+                  {
+                    SqlCommand cmmd = new SqlCommand("insert into Emp_Leave values ('" + int.Parse(Form1.instance.tb1.Text) + "','" + txtLeave.Text + "','" + dateTimePicker1.Text + "','" + int.Parse(txtCountOfDate.Text) + "','" + dateTimePicker2.Text + "','" + dateTimePicker3.Text + "','" + txtDescription.Text + "','"+DBNull.Value+"','"+DBNull.Value+"','" + "Waiting for approval" + "')", con);
 
 
 
 
+                    cmmd.ExecuteNonQuery();
 
 
-                MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Form2.value.LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
-                con.Close();
-            }
-            catch(Exception ex)
+
+                    MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form2.value.LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+                    Annual();
+                    con.Close();
+
+
+                  }
+                  else if (0 < casual && txtLeave.Text == "Casual")
+                  {
+                    SqlCommand cmmd = new SqlCommand("insert into Emp_Leave values ('" + int.Parse(Form1.instance.tb1.Text) + "','" + txtLeave.Text + "','" + dateTimePicker1.Text + "','" + int.Parse(txtCountOfDate.Text) + "','" + dateTimePicker2.Text + "','" + dateTimePicker3.Text + "','" + txtDescription.Text + "','" + DBNull.Value + "','" + DBNull.Value + "','" + "Waiting for approval" + "')", con);
+
+
+
+
+                    cmmd.ExecuteNonQuery();
+
+
+
+                    MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form2.value.LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+                    Casual();
+                    con.Close();
+
+                  }
+                  else if (0 < shorts && txtLeave.Text == "Short leave")
+                  {
+                    SqlCommand cmmd = new SqlCommand("insert into Emp_Leave values ('" + int.Parse(Form1.instance.tb1.Text) + "','" + txtLeave.Text + "','" + dateTimePicker1.Text + "','" + int.Parse(txtCountOfDate.Text) + "','" + dateTimePicker2.Text + "','" + dateTimePicker3.Text + "','" + txtDescription.Text + "','" + DBNull.Value + "','" + DBNull.Value + "','" + "Waiting for approval" + "')", con);
+
+
+
+
+                    cmmd.ExecuteNonQuery();
+
+
+
+                    MessageBox.Show("Applied successfully", "Applied", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form2.value.LoadData("select * from Emp_Leave where Employe_Id = '" + Form1.instance.tb1.Text + "'");
+                    Shorts();
+                    con.Close();
+                  }
+                  else 
+                  {
+                    MessageBox.Show("Something went wrong", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred during update: " + ex.Message, "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            
+
+        }
+
+        public void load()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                MessageBox.Show("An error occurred during update: " + ex.Message, "Error",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+                
+
+                reader.Close();
+                
+              
             }
-
-
-
         }
 
         public void Annual()
         {
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand cmd = new SqlCommand(
-                                           "UPDATE Employe SET annual_leaves = @annual_leaves " +
-
-                                           "WHERE Employe_Id = @EmployeId", connection);
-                annual = annual - 1;
-                cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
-                cmd.Parameters.AddWithValue("@annual_leaves", annual);
-
                 connection.Open();
-                cmd.ExecuteNonQuery();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                reader.Close();
+                annual = annual - 1;
+                SqlCommand cmmd = new SqlCommand("UPDATE Employe SET annual_leaves = '"+annual+"' WHERE Employe_Id = '"+Form1.instance.tb1.Text+"'", connection);
+                
+                //cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
+                //cmd.Parameters.AddWithValue("@annual_leaves", annual);
+
+                
+                cmmd.ExecuteNonQuery();
                 connection.Close();
+                
                 Form2.lvalue.loadLbl();
+                
             }
         }
+
+        public void Casual()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                reader.Close();
+                casual = casual - 1;
+                SqlCommand cmmd = new SqlCommand("UPDATE Employe SET casual_leaves = '" + casual + "' WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'", connection);
+
+                //cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
+                //cmd.Parameters.AddWithValue("@annual_leaves", annual);
+
+
+                cmmd.ExecuteNonQuery();
+                connection.Close();
+
+                Form2.lvalue.loadLbl();
+
+            }
+        }
+
+        public void Shorts()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string sql = "SELECT annual_leaves, casual_leaves, shorts_leaves FROM Employe WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, connection);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read(); // Assuming you want the first row
+                int annual = Convert.ToInt32(reader["annual_leaves"].ToString()); // Get the value from the "annual" column
+                int casual = Convert.ToInt32(reader["casual_leaves"].ToString());
+                int shorts = Convert.ToInt32(reader["shorts_leaves"].ToString());
+
+
+                reader.Close();
+                shorts = shorts - 1;
+                SqlCommand cmmd = new SqlCommand("UPDATE Employe SET shorts_leaves = '" + casual + "' WHERE Employe_Id = '" + Form1.instance.tb1.Text + "'", connection);
+
+                //cmd.Parameters.AddWithValue("@EmployeId", Form1.instance.tb1.Text);
+                //cmd.Parameters.AddWithValue("@annual_leaves", annual);
+
+
+                cmmd.ExecuteNonQuery();
+                connection.Close();
+
+                Form2.lvalue.loadLbl();
+
+            }
+        }
+
         private void Form3_Load(object sender, EventArgs e)
         {
-
+           
         }
     }
 }
